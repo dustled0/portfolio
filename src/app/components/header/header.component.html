@@ -1,0 +1,31 @@
+<header class="header" [class.header--scrolled]="isScrolled">
+  <div class="header__container">
+    <a class="header__logo" (click)="scrollTo('hero')">
+      <span class="header__logo-text">DD</span>
+    </a>
+
+    <button
+      class="header__mobile-toggle"
+      (click)="toggleMobileMenu()"
+      [attr.aria-expanded]="isMobileMenuOpen"
+      aria-label="Toggle navigation menu">
+      <i class="fas" [class.fa-bars]="!isMobileMenuOpen" [class.fa-times]="isMobileMenuOpen"></i>
+    </button>
+
+    <nav class="header__nav" [class.header__nav--open]="isMobileMenuOpen">
+      <ul class="header__nav-list">
+        @for (link of navLinks; track link.target) {
+          <li class="header__nav-item">
+            <a
+              class="header__nav-link"
+              (click)="scrollTo(link.target)"
+              (keydown.enter)="scrollTo(link.target)"
+              tabindex="0">
+              {{ link.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

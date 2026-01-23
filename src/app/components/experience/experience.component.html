@@ -1,0 +1,37 @@
+<section id="experience" class="section section--alt">
+  <div class="container">
+    <h2 class="section__title">Work Experience</h2>
+
+    <div class="timeline">
+      @for (exp of experiences; track exp.company; let i = $index; let isOdd = $odd) {
+        <div class="timeline__item" [class.timeline__item--right]="isOdd">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <div class="timeline__header">
+              <h3 class="timeline__position">{{ exp.position }}</h3>
+              <span class="timeline__company">
+                <i class="fas fa-building"></i>
+                {{ exp.company }}
+              </span>
+            </div>
+            <div class="timeline__meta">
+              <span class="timeline__date">
+                <i class="fas fa-calendar-alt"></i>
+                {{ exp.startDate }} - {{ exp.endDate }}
+              </span>
+              <span class="timeline__location">
+                <i class="fas fa-map-marker-alt"></i>
+                {{ exp.location }}
+              </span>
+            </div>
+            <ul class="timeline__responsibilities">
+              @for (resp of exp.responsibilities; track resp) {
+                <li>{{ resp }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

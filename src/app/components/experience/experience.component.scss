@@ -1,0 +1,147 @@
+$primary-brown: #5D4037;
+$primary-brown-light: #795548;
+$accent-tan: #D7CCC8;
+$cream: #EFEBE9;
+$text-dark: #3E2723;
+$accent-orange: #8D6E63;
+$white: #FFFFFF;
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background-color: $accent-tan;
+
+    @media (max-width: 767px) {
+      left: 20px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: 50%;
+    padding: 0 40px 40px 0;
+    margin-left: 0;
+
+    @media (max-width: 767px) {
+      width: 100%;
+      padding: 0 0 40px 50px;
+    }
+
+    &--right {
+      margin-left: 50%;
+      padding: 0 0 40px 40px;
+
+      @media (max-width: 767px) {
+        margin-left: 0;
+        padding: 0 0 40px 50px;
+      }
+
+      .timeline__dot {
+        left: -8px;
+
+        @media (max-width: 767px) {
+          left: 12px;
+        }
+      }
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    right: -8px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background-color: $primary-brown;
+    border-radius: 50%;
+    border: 3px solid $white;
+    box-shadow: 0 0 0 3px $primary-brown;
+
+    @media (max-width: 767px) {
+      left: 12px;
+      right: auto;
+    }
+  }
+
+  &__content {
+    background-color: $white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__header {
+    margin-bottom: 1rem;
+  }
+
+  &__position {
+    font-size: 1.25rem;
+    color: $primary-brown;
+    margin-bottom: 0.25rem;
+  }
+
+  &__company {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $accent-orange;
+    font-weight: 500;
+
+    i {
+      font-size: 0.875rem;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: $text-dark;
+  }
+
+  &__date,
+  &__location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    i {
+      color: $primary-brown;
+    }
+  }
+
+  &__responsibilities {
+    margin: 0;
+    padding-left: 1.25rem;
+
+    li {
+      margin-bottom: 0.5rem;
+      color: $text-dark;
+      line-height: 1.5;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::marker {
+        color: $accent-orange;
+      }
+    }
+  }
+}

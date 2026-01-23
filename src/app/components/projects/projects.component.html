@@ -1,0 +1,26 @@
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="section__title">Featured Projects</h2>
+
+    <div class="projects">
+      @for (project of projects; track project.name) {
+        <div class="project card">
+          <div class="project__icon">
+            <i class="fas fa-folder-open"></i>
+          </div>
+          <h3 class="project__name">{{ project.name }}</h3>
+          <p class="project__company">
+            <i class="fas fa-building"></i>
+            {{ project.company }}
+          </p>
+          <p class="project__description">{{ project.description }}</p>
+          <div class="project__technologies">
+            @for (tech of project.technologies; track tech) {
+              <span class="tag">{{ tech }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

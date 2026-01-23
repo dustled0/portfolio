@@ -1,0 +1,87 @@
+<section id="skills" class="section">
+  <div class="container">
+    <h2 class="section__title">Skills & Expertise</h2>
+
+    <div class="skills">
+      <div class="skills__category">
+        <h3 class="skills__category-title">
+          <i class="fas fa-code"></i>
+          Frontend Development
+        </h3>
+        <div class="skills__list">
+          @for (skill of frontendSkills; track skill.name) {
+            <div class="skill">
+              <div class="skill__header">
+                <span class="skill__name">{{ skill.name }}</span>
+                <span class="skill__level">{{ skill.level }}%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__progress" [style.width.%]="skill.level"></div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="skills__category">
+        <h3 class="skills__category-title">
+          <i class="fas fa-server"></i>
+          Backend Development
+        </h3>
+        <div class="skills__list">
+          @for (skill of backendSkills; track skill.name) {
+            <div class="skill">
+              <div class="skill__header">
+                <span class="skill__name">{{ skill.name }}</span>
+                <span class="skill__level">{{ skill.level }}%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__progress" [style.width.%]="skill.level"></div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="skills__category">
+        <h3 class="skills__category-title">
+          <i class="fas fa-tools"></i>
+          Tools & Technologies
+        </h3>
+        <div class="skills__list">
+          @for (skill of toolsSkills; track skill.name) {
+            <div class="skill">
+              <div class="skill__header">
+                <span class="skill__name">{{ skill.name }}</span>
+                <span class="skill__level">{{ skill.level }}%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__progress" [style.width.%]="skill.level"></div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="skills__category">
+        <h3 class="skills__category-title">
+          <i class="fas fa-star"></i>
+          Other Skills
+        </h3>
+        <div class="skills__list">
+          @for (skill of otherSkills; track skill.name) {
+            <div class="skill">
+              <div class="skill__header">
+                <span class="skill__name">{{ skill.name }}</span>
+                <span class="skill__level">{{ skill.level }}%</span>
+              </div>
+              <div class="skill__bar">
+                <div class="skill__progress" [style.width.%]="skill.level"></div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

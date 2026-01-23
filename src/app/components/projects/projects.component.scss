@@ -1,0 +1,75 @@
+$primary-brown: #5D4037;
+$primary-brown-light: #795548;
+$accent-tan: #D7CCC8;
+$cream: #EFEBE9;
+$text-dark: #3E2723;
+$accent-orange: #8D6E63;
+$white: #FFFFFF;
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    background-color: $cream;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    i {
+      font-size: 1.75rem;
+      color: $primary-brown;
+    }
+  }
+
+  &__name {
+    font-size: 1.25rem;
+    color: $primary-brown;
+    margin-bottom: 0.5rem;
+  }
+
+  &__company {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $accent-orange;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+
+    i {
+      font-size: 0.75rem;
+    }
+  }
+
+  &__description {
+    color: $text-dark;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+  }
+
+  &__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-top: auto;
+  }
+}

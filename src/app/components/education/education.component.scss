@@ -1,0 +1,105 @@
+$primary-brown: #5D4037;
+$primary-brown-light: #795548;
+$accent-tan: #D7CCC8;
+$cream: #EFEBE9;
+$text-dark: #3E2723;
+$accent-orange: #8D6E63;
+$white: #FFFFFF;
+
+.education {
+  max-width: 600px;
+  margin: 0 auto;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem;
+
+    @media (min-width: 576px) {
+      flex-direction: row;
+      text-align: left;
+      gap: 2rem;
+    }
+  }
+
+  &__icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, $primary-brown, $accent-orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+
+    @media (min-width: 576px) {
+      margin-bottom: 0;
+    }
+
+    i {
+      font-size: 2.5rem;
+      color: $white;
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__degree {
+    font-size: 1.5rem;
+    color: $primary-brown;
+    margin-bottom: 0.5rem;
+  }
+
+  &__school {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: $accent-orange;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+
+    @media (min-width: 576px) {
+      justify-content: flex-start;
+    }
+
+    i {
+      font-size: 1rem;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: $text-dark;
+
+    @media (min-width: 576px) {
+      flex-direction: row;
+      gap: 1.5rem;
+    }
+  }
+
+  &__location,
+  &__years {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    @media (min-width: 576px) {
+      justify-content: flex-start;
+    }
+
+    i {
+      color: $primary-brown;
+    }
+  }
+}

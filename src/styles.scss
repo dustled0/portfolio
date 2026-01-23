@@ -1,0 +1,223 @@
+// Color Variables - Brown/Tan Theme matching resume
+$primary-brown: #5D4037;
+$primary-brown-light: #795548;
+$accent-tan: #D7CCC8;
+$cream: #EFEBE9;
+$text-dark: #3E2723;
+$text-medium: #5D4037;
+$accent-orange: #8D6E63;
+$white: #FFFFFF;
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+// Typography
+$font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-heading: 'Georgia', 'Times New Roman', Times, serif;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Mixins
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+}
+
+// Reset & Base Styles
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-primary;
+  color: $text-dark;
+  background-color: $cream;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  color: $primary-brown;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: $primary-brown;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $accent-orange;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Container
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @include respond-to(md) {
+    padding: 0 2rem;
+  }
+}
+
+// Section Styling
+.section {
+  padding: 4rem 0;
+
+  @include respond-to(md) {
+    padding: 5rem 0;
+  }
+
+  &--alt {
+    background-color: $white;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: $accent-orange;
+      margin: 1rem auto 0;
+    }
+  }
+}
+
+// Button Styles
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+
+  &--primary {
+    background-color: $primary-brown;
+    color: $white;
+
+    &:hover {
+      background-color: $primary-brown-light;
+      color: $white;
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 2px solid $primary-brown;
+    color: $primary-brown;
+
+    &:hover {
+      background-color: $primary-brown;
+      color: $white;
+    }
+  }
+}
+
+// Card Styles
+.card {
+  background-color: $white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px $shadow-color;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Badge/Tag Styles
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: $accent-tan;
+  color: $text-dark;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin: 0.25rem;
+}
+
+// Grid System
+.grid {
+  display: grid;
+  gap: 1.5rem;
+
+  &--2 {
+    grid-template-columns: 1fr;
+
+    @include respond-to(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &--3 {
+    grid-template-columns: 1fr;
+
+    @include respond-to(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+// Utility Classes
+.text-center { text-align: center; }
+.text-primary { color: $primary-brown; }
+.text-accent { color: $accent-orange; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }

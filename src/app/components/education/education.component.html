@@ -1,0 +1,30 @@
+<section id="education" class="section section--alt">
+  <div class="container">
+    <h2 class="section__title">Education</h2>
+
+    <div class="education">
+      <div class="education__card card">
+        <div class="education__icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="education__content">
+          <h3 class="education__degree">{{ education.degree }}</h3>
+          <p class="education__school">
+            <i class="fas fa-university"></i>
+            {{ education.school }}
+          </p>
+          <div class="education__meta">
+            <span class="education__location">
+              <i class="fas fa-map-marker-alt"></i>
+              {{ education.location }}
+            </span>
+            <span class="education__years">
+              <i class="fas fa-calendar-alt"></i>
+              {{ education.startYear }} - {{ education.endYear }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
