@@ -24,7 +24,46 @@ $white: #FFFFFF;
     right: 0;
     bottom: -20%;
     background: linear-gradient(135deg, $primary-brown 0%, $primary-brown-light 50%, $accent-orange 100%);
+    z-index: -3;
+  }
+
+  // Animated Gradient Mesh Overlay
+  &__mesh {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: -2;
+    opacity: 0.6;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      animation: mesh-float 15s ease-in-out infinite;
+    }
+
+    &::before {
+      width: 60%;
+      height: 60%;
+      background: radial-gradient(ellipse, rgba($accent-tan, 0.4) 0%, transparent 70%);
+      top: -20%;
+      left: -10%;
+      animation-delay: 0s;
+    }
+
+    &::after {
+      width: 50%;
+      height: 50%;
+      background: radial-gradient(ellipse, rgba($accent-orange, 0.3) 0%, transparent 70%);
+      bottom: -10%;
+      right: -10%;
+      animation-delay: -7s;
+    }
   }
 
   &__overlay {
@@ -180,5 +219,135 @@ $white: #FFFFFF;
   }
   60% {
     transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+// Animated Floating Particles
+.hero__particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba($white, 0.1);
+  animation: float-particle 15s infinite ease-in-out;
+
+  &--1 {
+    width: 80px;
+    height: 80px;
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 20s;
+  }
+
+  &--2 {
+    width: 60px;
+    height: 60px;
+    top: 20%;
+    right: 15%;
+    animation-delay: -3s;
+    animation-duration: 18s;
+    background: rgba($accent-tan, 0.15);
+  }
+
+  &--3 {
+    width: 40px;
+    height: 40px;
+    top: 60%;
+    left: 5%;
+    animation-delay: -5s;
+    animation-duration: 22s;
+  }
+
+  &--4 {
+    width: 100px;
+    height: 100px;
+    bottom: 20%;
+    right: 10%;
+    animation-delay: -8s;
+    animation-duration: 25s;
+    background: rgba($white, 0.05);
+  }
+
+  &--5 {
+    width: 30px;
+    height: 30px;
+    top: 40%;
+    left: 30%;
+    animation-delay: -2s;
+    animation-duration: 16s;
+    background: rgba($accent-tan, 0.1);
+  }
+
+  &--6 {
+    width: 50px;
+    height: 50px;
+    top: 70%;
+    right: 30%;
+    animation-delay: -6s;
+    animation-duration: 19s;
+  }
+
+  &--7 {
+    width: 70px;
+    height: 70px;
+    top: 5%;
+    left: 50%;
+    animation-delay: -10s;
+    animation-duration: 23s;
+    background: rgba($white, 0.08);
+  }
+
+  &--8 {
+    width: 45px;
+    height: 45px;
+    bottom: 30%;
+    left: 20%;
+    animation-delay: -4s;
+    animation-duration: 17s;
+    background: rgba($accent-tan, 0.12);
+  }
+}
+
+@keyframes float-particle {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translate(30px, -40px) rotate(90deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-20px, -80px) rotate(180deg);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translate(40px, -40px) rotate(270deg);
+    opacity: 0.9;
+  }
+}
+
+@keyframes mesh-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(5%, 10%) scale(1.1);
+  }
+  50% {
+    transform: translate(-5%, 5%) scale(0.95);
+  }
+  75% {
+    transform: translate(10%, -5%) scale(1.05);
   }
 }

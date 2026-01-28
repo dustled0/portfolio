@@ -12,6 +12,7 @@ import { BlogComponent } from './components/blog/blog.component';
 import { EducationComponent } from './components/education/education.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
+import { CustomCursorDirective } from './directives/custom-cursor.directive';
 
 @Component({
   selector: 'app-root',
@@ -29,7 +30,8 @@ import { BackToTopComponent } from './components/back-to-top/back-to-top.compone
     BlogComponent,
     EducationComponent,
     ContactComponent,
-    BackToTopComponent
+    BackToTopComponent,
+    CustomCursorDirective
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

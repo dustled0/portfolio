@@ -31,7 +31,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="certification__verify"
-              aria-label="Verify {{ cert.name }} credential">
+              [attr.aria-label]="'Verify ' + cert.name + ' credential'">
               <i class="fas fa-external-link-alt" aria-hidden="true"></i>
               Verify
             </a>

@@ -143,27 +143,49 @@ $white: #FFFFFF;
 .project {
   display: flex;
   flex-direction: column;
+  background: var(--glass-bg, rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px var(--glass-shadow, rgba(0, 0, 0, 0.1));
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.3));
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 16px 48px var(--glass-shadow, rgba(0, 0, 0, 0.18));
+    border-color: var(--accent-orange, $accent-orange);
+  }
 
   &__icon {
     width: 60px;
     height: 60px;
-    background-color: var(--bg-primary, $cream);
+    background: linear-gradient(135deg, var(--primary-brown, $primary-brown), var(--accent-orange, $accent-orange));
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(93, 64, 55, 0.3);
 
     i {
       font-size: 1.75rem;
-      color: var(--primary-brown, $primary-brown);
-      transition: color 0.3s ease;
+      color: $white;
+      transition: transform 0.3s ease;
     }
   }
 
   &:hover &__icon {
     transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(93, 64, 55, 0.4);
+
+    i {
+      transform: scale(1.1);
+    }
   }
 
   &__name {

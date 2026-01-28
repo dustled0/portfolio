@@ -8,7 +8,7 @@
       </p>
 
       <div class="contact__cards" role="list" aria-label="Contact information">
-        <a href="mailto:{{ personalInfo.email }}" class="contact__card card" role="listitem" aria-label="Email me at {{ personalInfo.email }}" appScrollReveal [delay]="200">
+        <a href="mailto:{{ personalInfo.email }}" class="contact__card card" role="listitem" [attr.aria-label]="'Email me at ' + personalInfo.email" appScrollReveal [delay]="200">
           <div class="contact__card-icon" aria-hidden="true">
             <i class="fas fa-envelope"></i>
           </div>
@@ -16,7 +16,7 @@
           <p class="contact__card-value">{{ personalInfo.email }}</p>
         </a>
 
-        <a href="tel:{{ personalInfo.phone }}" class="contact__card card" role="listitem" aria-label="Call me at {{ personalInfo.phone }}" appScrollReveal [delay]="300">
+        <a href="tel:{{ personalInfo.phone }}" class="contact__card card" role="listitem" [attr.aria-label]="'Call me at ' + personalInfo.phone" appScrollReveal [delay]="300">
           <div class="contact__card-icon" aria-hidden="true">
             <i class="fas fa-phone"></i>
           </div>
