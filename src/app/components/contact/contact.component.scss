@@ -73,8 +73,67 @@ $white: #FFFFFF;
 
   &__intro {
     font-size: 1.1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     color: rgba($white, 0.9);
+  }
+
+  // Calendly Schedule Button
+  &__schedule {
+    margin-bottom: 3rem;
+  }
+
+  &__schedule-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: $white;
+    color: $primary-brown;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba($accent-tan, 0.4), transparent);
+      transition: left 0.5s ease;
+    }
+
+    &:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+      background: $accent-tan;
+
+      &::before {
+        left: 100%;
+      }
+    }
+
+    i:first-child {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__schedule-external {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin-left: 0.25rem;
+  }
+
+  &__schedule-text {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: rgba($white, 0.8);
   }
 
   &__cards {

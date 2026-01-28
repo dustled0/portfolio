@@ -81,6 +81,7 @@ export interface ResumeData {
     yearsExperience: number;
     availableForWork: boolean;
     availabilityStatus?: string;
+    calendlyUrl?: string;
   };
   profile: string;
   skills: Skill[];
@@ -103,7 +104,8 @@ export const RESUME_DATA: ResumeData = {
     location: 'Cebu City, Philippines',
     yearsExperience: 15,
     availableForWork: true,
-    availabilityStatus: 'Available for Freelance'
+    availabilityStatus: 'Available for Freelance',
+    calendlyUrl: 'https://calendly.com/dustled0'
   },
   profile: `Experienced Web Developer with 15 years of expertise in building dynamic and responsive web applications. Proficient in modern frontend frameworks including Angular and React JS, with strong skills in DAML for blockchain-based applications. Adept at creating user-centric designs using SCSS and Bootstrap, while also leveraging PHP and WordPress for backend development.`,
   skills: [
@@ -326,33 +328,18 @@ export const RESUME_DATA: ResumeData = {
   ],
   clients: [
     {
-      name: 'Accenture',
+      name: 'Accenture Inc.',
       icon: 'fas fa-greater-than',
       url: 'https://www.accenture.com'
     },
     {
       name: 'RipeConcept',
       icon: 'fas fa-lightbulb',
-      url: '#'
+      url: 'https://ripeconcepts.com/'
     },
     {
       name: 'Smooth Dezigns',
       icon: 'fas fa-palette',
-      url: '#'
-    },
-    {
-      name: 'Enterprise Clients',
-      icon: 'fas fa-building',
-      url: '#'
-    },
-    {
-      name: 'Startups',
-      icon: 'fas fa-rocket',
-      url: '#'
-    },
-    {
-      name: 'E-Commerce',
-      icon: 'fas fa-shopping-bag',
       url: '#'
     }
   ]

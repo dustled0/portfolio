@@ -150,7 +150,7 @@ npm start            # Development server
 - [ ] **Interactive resume timeline** - Clickable nodes with expanding details
 - [ ] **Live code playground** - Embedded CodePen/StackBlitz demos
 - [ ] **Chat widget integration** - Quick contact via chat (Crisp, Tawk.to)
-- [ ] **Calendly booking integration** - Allow clients to schedule calls directly
+- [x] **Calendly booking integration** - "Schedule a Call" button in contact section with configurable URL
 - [ ] **Project detail modals** - Expanded view with more project information
 
 ### Client-Focused Additions
@@ -194,7 +194,7 @@ npm start            # Development server
 | ~~Availability badge~~ | ~~High~~ | ~~Done~~ |
 | ~~Client logos section~~ | ~~High~~ | ~~Done~~ |
 | ~~Glassmorphism cards~~ | ~~Medium~~ | ~~Done~~ |
-| Calendly integration | High | Low |
+| ~~Calendly integration~~ | ~~High~~ | ~~Done~~ |
 | Case study (1 project) | High | Medium |
 | GitHub stats | Medium | Medium |
 | Interactive timeline | Medium | Medium |
@@ -211,5 +211,5 @@ These can be implemented quickly for maximum impact:
 - [x] Create availability badge component
 - [x] Add client/company logos section
 - [x] Implement glassmorphism CSS on existing cards
-- [ ] Add Calendly button to contact section
+- [x] Add Calendly button to contact section
 - [ ] Write one detailed case study

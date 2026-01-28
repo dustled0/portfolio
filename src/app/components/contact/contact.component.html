@@ -9,6 +9,23 @@
         I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
       </p>
 
+      <!-- Schedule a Call CTA -->
+      @if (personalInfo.calendlyUrl) {
+        <div class="contact__schedule" appScrollReveal [delay]="150">
+          <a
+            [href]="personalInfo.calendlyUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact__schedule-btn"
+            aria-label="Schedule a call via Calendly">
+            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+            <span>Schedule a Call</span>
+            <i class="fas fa-external-link-alt contact__schedule-external" aria-hidden="true"></i>
+          </a>
+          <p class="contact__schedule-text">Book a free 30-minute consultation</p>
+        </div>
+      }
+
       <div class="contact__cards" role="list" aria-label="Contact information">
         <a href="mailto:{{ personalInfo.email }}" class="contact__card card" role="listitem" [attr.aria-label]="'Email me at ' + personalInfo.email" appScrollReveal [delay]="200">
           <div class="contact__card-icon" aria-hidden="true">
