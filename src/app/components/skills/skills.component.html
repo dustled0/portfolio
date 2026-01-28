@@ -1,9 +1,9 @@
 <section id="skills" class="section">
   <div class="container">
-    <h2 class="section__title">Skills & Expertise</h2>
+    <h2 class="section__title" appScrollReveal>Skills & Expertise</h2>
 
     <div class="skills">
-      <div class="skills__category">
+      <div class="skills__category" appScrollReveal [delay]="100">
         <h3 class="skills__category-title">
           <i class="fas fa-code"></i>
           Frontend Development
@@ -16,14 +16,14 @@
                 <span class="skill__level">{{ skill.level }}%</span>
               </div>
               <div class="skill__bar">
-                <div class="skill__progress" [style.width.%]="skill.level"></div>
+                <div class="skill__progress" [appSkillAnimate]="skill.level"></div>
               </div>
             </div>
           }
         </div>
       </div>
 
-      <div class="skills__category">
+      <div class="skills__category" appScrollReveal [delay]="200">
         <h3 class="skills__category-title">
           <i class="fas fa-server"></i>
           Backend Development
@@ -36,14 +36,14 @@
                 <span class="skill__level">{{ skill.level }}%</span>
               </div>
               <div class="skill__bar">
-                <div class="skill__progress" [style.width.%]="skill.level"></div>
+                <div class="skill__progress" [appSkillAnimate]="skill.level"></div>
               </div>
             </div>
           }
         </div>
       </div>
 
-      <div class="skills__category">
+      <div class="skills__category" appScrollReveal [delay]="300">
         <h3 class="skills__category-title">
           <i class="fas fa-tools"></i>
           Tools & Technologies
@@ -56,14 +56,14 @@
                 <span class="skill__level">{{ skill.level }}%</span>
               </div>
               <div class="skill__bar">
-                <div class="skill__progress" [style.width.%]="skill.level"></div>
+                <div class="skill__progress" [appSkillAnimate]="skill.level"></div>
               </div>
             </div>
           }
         </div>
       </div>
 
-      <div class="skills__category">
+      <div class="skills__category" appScrollReveal [delay]="400">
         <h3 class="skills__category-title">
           <i class="fas fa-star"></i>
           Other Skills
@@ -76,7 +76,7 @@
                 <span class="skill__level">{{ skill.level }}%</span>
               </div>
               <div class="skill__bar">
-                <div class="skill__progress" [style.width.%]="skill.level"></div>
+                <div class="skill__progress" [appSkillAnimate]="skill.level"></div>
               </div>
             </div>
           }

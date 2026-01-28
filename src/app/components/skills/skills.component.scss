@@ -16,22 +16,25 @@ $white: #FFFFFF;
   }
 
   &__category {
-    background-color: $white;
+    background-color: var(--card-bg, $white);
     border-radius: 8px;
     padding: 1.5rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px var(--shadow-color, rgba(0, 0, 0, 0.1));
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
     &-title {
       display: flex;
       align-items: center;
       gap: 0.75rem;
       margin-bottom: 1.5rem;
-      color: $primary-brown;
+      color: var(--primary-brown, $primary-brown);
       font-size: 1.25rem;
+      transition: color 0.3s ease;
 
       i {
         font-size: 1.25rem;
-        color: $accent-orange;
+        color: var(--accent-orange, $accent-orange);
+        transition: color 0.3s ease;
       }
     }
   }
@@ -52,26 +55,29 @@ $white: #FFFFFF;
 
   &__name {
     font-weight: 500;
-    color: $text-dark;
+    color: var(--text-primary, $text-dark);
+    transition: color 0.3s ease;
   }
 
   &__level {
     font-size: 0.875rem;
-    color: $accent-orange;
+    color: var(--accent-orange, $accent-orange);
     font-weight: 600;
+    transition: color 0.3s ease;
   }
 
   &__bar {
     height: 8px;
-    background-color: $accent-tan;
+    background-color: var(--accent-tan, $accent-tan);
     border-radius: 4px;
     overflow: hidden;
+    transition: background-color 0.3s ease;
   }
 
   &__progress {
     height: 100%;
-    background: linear-gradient(90deg, $primary-brown, $accent-orange);
+    background: linear-gradient(90deg, var(--primary-brown, $primary-brown), var(--accent-orange, $accent-orange));
     border-radius: 4px;
-    transition: width 1s ease-in-out;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }

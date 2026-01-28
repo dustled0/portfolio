@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -21,6 +22,8 @@ export class HeaderComponent {
     { label: 'Contact', target: 'contact' }
   ];
 
+  constructor(public themeService: ThemeService) {}
+
   @HostListener('window:scroll')
   onWindowScroll() {
     this.isScrolled = window.scrollY > 50;
@@ -40,5 +43,9 @@ export class HeaderComponent {
       element.scrollIntoView({ behavior: 'smooth' });
       this.closeMobileMenu();
     }
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
   }
 }

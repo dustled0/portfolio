@@ -1,14 +1,14 @@
 <section id="contact" class="section contact">
   <div class="container">
-    <h2 class="section__title">Get In Touch</h2>
+    <h2 class="section__title" appScrollReveal>Get In Touch</h2>
 
     <div class="contact__content">
-      <p class="contact__intro">
+      <p class="contact__intro" appScrollReveal [delay]="100">
         I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
       </p>
 
       <div class="contact__cards">
-        <a href="mailto:{{ personalInfo.email }}" class="contact__card card">
+        <a href="mailto:{{ personalInfo.email }}" class="contact__card card" appScrollReveal [delay]="200">
           <div class="contact__card-icon">
             <i class="fas fa-envelope"></i>
           </div>
@@ -16,7 +16,7 @@
           <p class="contact__card-value">{{ personalInfo.email }}</p>
         </a>
 
-        <a href="tel:{{ personalInfo.phone }}" class="contact__card card">
+        <a href="tel:{{ personalInfo.phone }}" class="contact__card card" appScrollReveal [delay]="300">
           <div class="contact__card-icon">
             <i class="fas fa-phone"></i>
           </div>
@@ -24,7 +24,7 @@
           <p class="contact__card-value">{{ personalInfo.phone }}</p>
         </a>
 
-        <div class="contact__card card">
+        <div class="contact__card card" appScrollReveal [delay]="400">
           <div class="contact__card-icon">
             <i class="fas fa-map-marker-alt"></i>
           </div>

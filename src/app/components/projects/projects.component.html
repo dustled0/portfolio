@@ -1,10 +1,10 @@
 <section id="projects" class="section">
   <div class="container">
-    <h2 class="section__title">Featured Projects</h2>
+    <h2 class="section__title" appScrollReveal>Featured Projects</h2>
 
     <div class="projects">
-      @for (project of projects; track project.name) {
-        <div class="project card">
+      @for (project of projects; track project.name; let i = $index) {
+        <div class="project card" appScrollReveal [delay]="i * 100">
           <div class="project__icon">
             <i class="fas fa-folder-open"></i>
           </div>

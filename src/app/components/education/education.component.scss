@@ -27,13 +27,14 @@ $white: #FFFFFF;
   &__icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, $primary-brown, $accent-orange);
+    background: linear-gradient(135deg, var(--primary-brown, $primary-brown), var(--accent-orange, $accent-orange));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
     flex-shrink: 0;
+    transition: transform 0.3s ease, background 0.3s ease;
 
     @media (min-width: 576px) {
       margin-bottom: 0;
@@ -41,8 +42,12 @@ $white: #FFFFFF;
 
     i {
       font-size: 2.5rem;
-      color: $white;
+      color: #fff;
     }
+  }
+
+  &__card:hover &__icon {
+    transform: scale(1.1) rotate(5deg);
   }
 
   &__content {
@@ -51,8 +56,9 @@ $white: #FFFFFF;
 
   &__degree {
     font-size: 1.5rem;
-    color: $primary-brown;
+    color: var(--primary-brown, $primary-brown);
     margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
   }
 
   &__school {
@@ -60,10 +66,11 @@ $white: #FFFFFF;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    color: $accent-orange;
+    color: var(--accent-orange, $accent-orange);
     font-weight: 500;
     font-size: 1.1rem;
     margin-bottom: 1rem;
+    transition: color 0.3s ease;
 
     @media (min-width: 576px) {
       justify-content: flex-start;
@@ -79,7 +86,8 @@ $white: #FFFFFF;
     flex-direction: column;
     gap: 0.5rem;
     font-size: 0.9rem;
-    color: $text-dark;
+    color: var(--text-primary, $text-dark);
+    transition: color 0.3s ease;
 
     @media (min-width: 576px) {
       flex-direction: row;
@@ -99,7 +107,8 @@ $white: #FFFFFF;
     }
 
     i {
-      color: $primary-brown;
+      color: var(--primary-brown, $primary-brown);
+      transition: color 0.3s ease;
     }
   }
 }

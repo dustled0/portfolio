@@ -1,10 +1,10 @@
 <section id="experience" class="section section--alt">
   <div class="container">
-    <h2 class="section__title">Work Experience</h2>
+    <h2 class="section__title" appScrollReveal>Work Experience</h2>
 
     <div class="timeline">
       @for (exp of experiences; track exp.company; let i = $index; let isOdd = $odd) {
-        <div class="timeline__item" [class.timeline__item--right]="isOdd">
+        <div class="timeline__item" [class.timeline__item--right]="isOdd" appScrollReveal [animation]="isOdd ? 'fade-right' : 'fade-left'" [delay]="i * 150">
           <div class="timeline__dot"></div>
           <div class="timeline__content">
             <div class="timeline__header">

@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RESUME_DATA, Skill } from '../../data/resume-data';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
+import { SkillAnimateDirective } from '../../directives/skill-animate.directive';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ScrollRevealDirective, SkillAnimateDirective],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })

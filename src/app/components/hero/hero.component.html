@@ -1,11 +1,14 @@
 <section id="hero" class="hero">
+  <div class="hero__background" appParallax [parallaxSpeed]="0.3"></div>
   <div class="hero__overlay"></div>
   <div class="hero__content">
     <div class="hero__avatar">
       <i class="fas fa-user"></i>
     </div>
     <h1 class="hero__name">{{ personalInfo.name }}</h1>
-    <p class="hero__title">{{ personalInfo.title }}</p>
+    <p class="hero__title">
+      <span class="typing-cursor" [appTyping]="typingTexts" [typingSpeed]="80" [deletingSpeed]="40" [pauseDuration]="2500"></span>
+    </p>
     <p class="hero__experience">{{ personalInfo.yearsExperience }}+ Years of Experience</p>
 
     <div class="hero__contact">

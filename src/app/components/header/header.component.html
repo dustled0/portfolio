@@ -4,13 +4,22 @@
       <span class="header__logo-text">DD</span>
     </a>
 
-    <button
-      class="header__mobile-toggle"
-      (click)="toggleMobileMenu()"
-      [attr.aria-expanded]="isMobileMenuOpen"
-      aria-label="Toggle navigation menu">
-      <i class="fas" [class.fa-bars]="!isMobileMenuOpen" [class.fa-times]="isMobileMenuOpen"></i>
-    </button>
+    <div class="header__actions">
+      <button
+        class="theme-toggle"
+        (click)="toggleTheme()"
+        [attr.aria-label]="(themeService.darkMode$ | async) ? 'Switch to light mode' : 'Switch to dark mode'">
+        <i class="fas" [class.fa-moon]="!(themeService.darkMode$ | async)" [class.fa-sun]="(themeService.darkMode$ | async)"></i>
+      </button>
+
+      <button
+        class="header__mobile-toggle"
+        (click)="toggleMobileMenu()"
+        [attr.aria-expanded]="isMobileMenuOpen"
+        aria-label="Toggle navigation menu">
+        <i class="fas" [class.fa-bars]="!isMobileMenuOpen" [class.fa-times]="isMobileMenuOpen"></i>
+      </button>
+    </div>
 
     <nav class="header__nav" [class.header__nav--open]="isMobileMenuOpen">
       <ul class="header__nav-list">
