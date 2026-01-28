@@ -138,7 +138,7 @@ npm start            # Development server
 ### Visual & Aesthetic Enhancements
 
 - [x] **Animated background particles/gradient mesh** - Floating particles and animated gradient mesh in hero and contact sections
-- [ ] **Professional photo/avatar** - Include profile image in hero or about section
+- [x] **Professional photo/avatar** - Profile image in hero section with animated gradient border
 - [x] **Project screenshots/thumbnails** - Visual card thumbnails with gradient placeholders and icon overlays; ready for real screenshots
 - [ ] **Video demos/GIFs** - Animated demonstrations of projects in action
 - [x] **Glassmorphism card effects** - Modern frosted glass styling on skills, projects, and contact cards
