@@ -1,42 +1,51 @@
-<header class="header" [class.header--scrolled]="isScrolled">
+<header class="header" role="banner" [class.header--scrolled]="isScrolled">
   <div class="header__container">
-    <a class="header__logo" (click)="scrollTo('hero')">
+    <a class="header__logo" (click)="scrollTo('hero')" (keydown.enter)="scrollTo('hero')" tabindex="0" aria-label="Go to top of page">
       <span class="header__logo-text">DD</span>
     </a>
 
     <div class="header__actions">
+      <app-language-switcher></app-language-switcher>
+
       <a
         href="assets/resume.pdf"
         download="Dustine_Dequito_Resume.pdf"
         class="resume-download"
         aria-label="Download resume as PDF">
-        <i class="fas fa-download"></i>
+        <i class="fas fa-download" aria-hidden="true"></i>
       </a>
 
       <button
         class="theme-toggle"
         (click)="toggleTheme()"
         [attr.aria-label]="(themeService.darkMode$ | async) ? 'Switch to light mode' : 'Switch to dark mode'">
-        <i class="fas" [class.fa-moon]="!(themeService.darkMode$ | async)" [class.fa-sun]="(themeService.darkMode$ | async)"></i>
+        <i class="fas" [class.fa-moon]="!(themeService.darkMode$ | async)" [class.fa-sun]="(themeService.darkMode$ | async)" aria-hidden="true"></i>
       </button>
 
       <button
         class="header__mobile-toggle"
         (click)="toggleMobileMenu()"
         [attr.aria-expanded]="isMobileMenuOpen"
+        aria-controls="main-nav"
         aria-label="Toggle navigation menu">
-        <i class="fas" [class.fa-bars]="!isMobileMenuOpen" [class.fa-times]="isMobileMenuOpen"></i>
+        <span class="hamburger" [class.hamburger--open]="isMobileMenuOpen">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </span>
       </button>
     </div>
 
-    <nav class="header__nav" [class.header__nav--open]="isMobileMenuOpen">
+    <nav id="main-nav" class="header__nav" role="navigation" aria-label="Main navigation" [class.header__nav--open]="isMobileMenuOpen">
       <ul class="header__nav-list">
         @for (link of navLinks; track link.target) {
           <li class="header__nav-item">
             <a
               class="header__nav-link"
+              [class.header__nav-link--active]="activeSection === link.target"
               (click)="scrollTo(link.target)"
               (keydown.enter)="scrollTo(link.target)"
+              [attr.aria-current]="activeSection === link.target ? 'true' : null"
               tabindex="0">
               {{ link.label }}
             </a>

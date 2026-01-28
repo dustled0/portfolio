@@ -1,0 +1,43 @@
+<section id="certifications" class="section" aria-labelledby="certifications-title">
+  <div class="container">
+    <h2 id="certifications-title" class="section__title" appScrollReveal>Certifications</h2>
+
+    <div class="certifications" role="list" aria-label="Professional certifications">
+      @for (cert of certifications; track cert.name; let i = $index) {
+        <article class="certification card" role="listitem" appScrollReveal [delay]="i * 100">
+          <div class="certification__icon" aria-hidden="true">
+            <i [class]="cert.icon || 'fas fa-certificate'"></i>
+          </div>
+          <div class="certification__content">
+            <h3 class="certification__name">{{ cert.name }}</h3>
+            <p class="certification__issuer">
+              <i class="fas fa-building" aria-hidden="true"></i>
+              {{ cert.issuer }}
+            </p>
+            <p class="certification__date">
+              <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+              Issued: {{ cert.date }}
+            </p>
+            @if (cert.credentialId) {
+              <p class="certification__credential">
+                <i class="fas fa-id-card" aria-hidden="true"></i>
+                ID: {{ cert.credentialId }}
+              </p>
+            }
+          </div>
+          @if (cert.credentialUrl) {
+            <a
+              [href]="cert.credentialUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="certification__verify"
+              aria-label="Verify {{ cert.name }} credential">
+              <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+              Verify
+            </a>
+          }
+        </article>
+      }
+    </div>
+  </div>
+</section>

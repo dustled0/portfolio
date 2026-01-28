@@ -29,6 +29,39 @@ export interface Education {
   endYear: number;
 }
 
+export interface Testimonial {
+  name: string;
+  position: string;
+  company: string;
+  quote: string;
+  avatar?: string;
+}
+
+export interface Certification {
+  name: string;
+  issuer: string;
+  date: string;
+  credentialId?: string;
+  credentialUrl?: string;
+  icon?: string;
+}
+
+export interface BlogPost {
+  title: string;
+  excerpt: string;
+  date: string;
+  url: string;
+  image?: string;
+  tags: string[];
+}
+
+export interface Statistic {
+  value: number;
+  label: string;
+  suffix?: string;
+  icon: string;
+}
+
 export interface ResumeData {
   personalInfo: {
     name: string;
@@ -43,6 +76,10 @@ export interface ResumeData {
   experience: Experience[];
   projects: Project[];
   education: Education;
+  testimonials: Testimonial[];
+  certifications: Certification[];
+  blogPosts: BlogPost[];
+  statistics: Statistic[];
 }
 
 export const RESUME_DATA: ResumeData = {
@@ -78,7 +115,7 @@ export const RESUME_DATA: ResumeData = {
       company: 'Accenture Inc.',
       position: 'Advanced App Engineering Specialist',
       location: 'Cebu City, Philippines',
-      startDate: 'Oct 2021',
+      startDate: 'Apr 2015',
       endDate: 'Present',
       responsibilities: [
         'Develop and maintain enterprise-level web applications using Angular and React',
@@ -92,8 +129,8 @@ export const RESUME_DATA: ResumeData = {
       company: 'RipeConcept',
       position: 'Front End Developer',
       location: 'Cebu City, Philippines',
-      startDate: 'Aug 2017',
-      endDate: 'Oct 2021',
+      startDate: 'Feb 2013',
+      endDate: 'Jul 2015',
       responsibilities: [
         'Built responsive and interactive web applications using Angular and modern JavaScript',
         'Developed custom WordPress themes and plugins for client websites',
@@ -106,8 +143,8 @@ export const RESUME_DATA: ResumeData = {
       company: 'Smooth Dezigns',
       position: 'Web Developer',
       location: 'Cebu City, Philippines',
-      startDate: 'Jun 2010',
-      endDate: 'Aug 2017',
+      startDate: 'Jan 2012',
+      endDate: 'Jan 2013',
       responsibilities: [
         'Developed and maintained websites using PHP, WordPress, and JavaScript',
         'Created responsive layouts using CSS3 and Bootstrap',
@@ -161,5 +198,104 @@ export const RESUME_DATA: ResumeData = {
     location: 'Cebu City, Philippines',
     startYear: 2006,
     endYear: 2010
-  }
+  },
+  testimonials: [
+    {
+      name: 'Sarah Chen',
+      position: 'Senior Project Manager',
+      company: 'Accenture Inc.',
+      quote: 'Dustine is an exceptional developer who consistently delivers high-quality work. His expertise in Angular and React has been invaluable to our team. He\'s not just technically skilled but also a great mentor to junior developers.'
+    },
+    {
+      name: 'Michael Rodriguez',
+      position: 'Tech Lead',
+      company: 'Accenture Inc.',
+      quote: 'Working with Dustine has been a pleasure. His attention to detail and ability to solve complex problems make him stand out. He\'s always up-to-date with the latest technologies and best practices.'
+    },
+    {
+      name: 'Jennifer Santos',
+      position: 'CEO',
+      company: 'RipeConcept',
+      quote: 'Dustine was instrumental in building our e-commerce platform. His frontend expertise and dedication to creating pixel-perfect designs exceeded our expectations. Highly recommended!'
+    }
+  ],
+  certifications: [
+    {
+      name: 'Angular Developer Certification',
+      issuer: 'Google',
+      date: 'Jan 2023',
+      credentialId: 'ANG-2023-001',
+      icon: 'fab fa-angular'
+    },
+    {
+      name: 'AWS Certified Cloud Practitioner',
+      issuer: 'Amazon Web Services',
+      date: 'Mar 2022',
+      credentialId: 'AWS-CCP-2022',
+      icon: 'fab fa-aws'
+    },
+    {
+      name: 'Professional Scrum Master I',
+      issuer: 'Scrum.org',
+      date: 'Sep 2021',
+      credentialId: 'PSM-I-2021',
+      icon: 'fas fa-tasks'
+    },
+    {
+      name: 'React Developer Certificate',
+      issuer: 'Meta',
+      date: 'Jun 2021',
+      credentialId: 'META-REACT-2021',
+      icon: 'fab fa-react'
+    }
+  ],
+  blogPosts: [
+    {
+      title: 'Building Scalable Angular Applications: Best Practices',
+      excerpt: 'Learn the essential patterns and practices for building enterprise-grade Angular applications that scale.',
+      date: 'Dec 2024',
+      url: '#',
+      tags: ['Angular', 'Architecture', 'Best Practices']
+    },
+    {
+      title: 'Modern CSS Techniques Every Developer Should Know',
+      excerpt: 'Explore modern CSS features like Grid, Container Queries, and CSS Variables that will level up your styling game.',
+      date: 'Nov 2024',
+      url: '#',
+      tags: ['CSS', 'Frontend', 'Web Design']
+    },
+    {
+      title: 'Introduction to DAML for Blockchain Development',
+      excerpt: 'A beginner-friendly guide to DAML and how it simplifies building blockchain-based applications.',
+      date: 'Oct 2024',
+      url: '#',
+      tags: ['DAML', 'Blockchain', 'Smart Contracts']
+    }
+  ],
+  statistics: [
+    {
+      value: 15,
+      label: 'Years Experience',
+      suffix: '+',
+      icon: 'fas fa-briefcase'
+    },
+    {
+      value: 50,
+      label: 'Projects Completed',
+      suffix: '+',
+      icon: 'fas fa-project-diagram'
+    },
+    {
+      value: 20,
+      label: 'Happy Clients',
+      suffix: '+',
+      icon: 'fas fa-smile'
+    },
+    {
+      value: 100,
+      label: 'Code Reviews',
+      suffix: '+',
+      icon: 'fas fa-code'
+    }
+  ]
 };

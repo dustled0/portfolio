@@ -1,20 +1,21 @@
-<section id="skills" class="section">
+<section id="skills" class="section" aria-labelledby="skills-title">
   <div class="container">
-    <h2 class="section__title" appScrollReveal>Skills & Expertise</h2>
+    <h2 id="skills-title" class="section__title" appScrollReveal>Skills & Expertise</h2>
 
     <div class="skills__search" appScrollReveal [delay]="50">
-      <i class="fas fa-search"></i>
+      <i class="fas fa-search" aria-hidden="true"></i>
       <input
         type="text"
         [(ngModel)]="searchQuery"
         placeholder="Search skills..."
         class="skills__search-input"
-        aria-label="Search skills">
+        aria-label="Search skills"
+        aria-describedby="skills-search-status">
     </div>
 
     @if (!hasResults) {
-      <div class="skills__no-results" appScrollReveal>
-        <i class="fas fa-search"></i>
+      <div id="skills-search-status" class="skills__no-results" appScrollReveal role="status" aria-live="polite">
+        <i class="fas fa-search" aria-hidden="true"></i>
         <p>No skills found matching "{{ searchQuery }}"</p>
         <button class="btn btn--secondary" (click)="searchQuery = ''">
           Clear search
@@ -26,7 +27,7 @@
       @if (frontendSkills.length > 0) {
         <div class="skills__category" appScrollReveal [delay]="100">
           <h3 class="skills__category-title">
-            <i class="fas fa-code"></i>
+            <i class="fas fa-code" aria-hidden="true"></i>
             Frontend Development
           </h3>
           <div class="skills__list">
@@ -48,7 +49,7 @@
       @if (backendSkills.length > 0) {
         <div class="skills__category" appScrollReveal [delay]="200">
           <h3 class="skills__category-title">
-            <i class="fas fa-server"></i>
+            <i class="fas fa-server" aria-hidden="true"></i>
             Backend Development
           </h3>
           <div class="skills__list">
@@ -70,7 +71,7 @@
       @if (toolsSkills.length > 0) {
         <div class="skills__category" appScrollReveal [delay]="300">
           <h3 class="skills__category-title">
-            <i class="fas fa-tools"></i>
+            <i class="fas fa-tools" aria-hidden="true"></i>
             Tools & Technologies
           </h3>
           <div class="skills__list">
@@ -92,7 +93,7 @@
       @if (otherSkills.length > 0) {
         <div class="skills__category" appScrollReveal [delay]="400">
           <h3 class="skills__category-title">
-            <i class="fas fa-star"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
             Other Skills
           </h3>
           <div class="skills__list">

@@ -1,17 +1,20 @@
-import { Component, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, HostListener, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ThemeService } from '../../services/theme.service';
+import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LanguageSwitcherComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit, OnDestroy {
   isScrolled = false;
   isMobileMenuOpen = false;
+  activeSection = 'hero';
+  private observer: IntersectionObserver | null = null;
 
   navLinks = [
     { label: 'About', target: 'about' },
@@ -22,7 +25,47 @@ export class HeaderComponent {
     { label: 'Contact', target: 'contact' }
   ];
 
-  constructor(public themeService: ThemeService) {}
+  constructor(
+    public themeService: ThemeService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
+
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.setupIntersectionObserver();
+    }
+  }
+
+  ngOnDestroy() {
+    if (this.observer) {
+      this.observer.disconnect();
+    }
+  }
+
+  private setupIntersectionObserver() {
+    const options: IntersectionObserverInit = {
+      root: null,
+      rootMargin: '-70px 0px -50% 0px',
+      threshold: 0
+    };
+
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.activeSection = entry.target.id;
+        }
+      });
+    }, options);
+
+    // Observe all sections
+    const sections = ['hero', ...this.navLinks.map(link => link.target)];
+    sections.forEach((sectionId) => {
+      const element = document.getElementById(sectionId);
+      if (element && this.observer) {
+        this.observer.observe(element);
+      }
+    });
+  }
 
   @HostListener('window:scroll')
   onWindowScroll() {

@@ -1,0 +1,160 @@
+$primary-brown: #5D4037;
+$primary-brown-light: #795548;
+$accent-tan: #D7CCC8;
+$cream: #EFEBE9;
+$white: #FFFFFF;
+
+.testimonials-carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 3rem;
+
+  &__content {
+    background: $white;
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  &__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: $white;
+    border: 2px solid $accent-tan;
+    color: $primary-brown;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+
+    &:hover {
+      background: $primary-brown;
+      border-color: $primary-brown;
+      color: $white;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    &--prev {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
+
+    @media (max-width: 576px) {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  &__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: $accent-tan;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $primary-brown-light;
+    }
+
+    &--active {
+      background: $primary-brown;
+      transform: scale(1.2);
+    }
+  }
+}
+
+.testimonial {
+  text-align: center;
+
+  &__quote-icon {
+    color: $accent-tan;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+  }
+
+  &__quote {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-dark, #3E2723);
+    font-style: italic;
+    margin: 0 0 2rem;
+    position: relative;
+
+    @media (min-width: 768px) {
+      font-size: 1.35rem;
+    }
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  &__avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $primary-brown, $primary-brown-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    font-size: 1.5rem;
+  }
+
+  &__info {
+    text-align: left;
+  }
+
+  &__name {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: $primary-brown;
+    display: block;
+  }
+
+  &__position {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.25rem 0 0;
+  }
+}
+
+// Dark theme support
+:host-context(.dark-theme) {
+  .testimonials-carousel__content {
+    background: var(--card-bg);
+  }
+
+  .testimonial__quote {
+    color: var(--text-primary);
+  }
+
+  .testimonial__position {
+    color: var(--text-secondary);
+  }
+}

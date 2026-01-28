@@ -1,28 +1,28 @@
-<section id="about" class="section section--alt">
+<section id="about" class="section section--alt" aria-labelledby="about-title">
   <div class="container">
-    <h2 class="section__title" appScrollReveal>About Me</h2>
+    <h2 id="about-title" class="section__title" appScrollReveal>About Me</h2>
 
     <div class="about">
       <div class="about__content">
         <p class="about__text" appScrollReveal [delay]="100">{{ profile }}</p>
 
-        <div class="about__highlights">
-          <div class="about__highlight" appScrollReveal [delay]="200">
-            <i class="fas fa-briefcase"></i>
+        <div class="about__highlights" role="list" aria-label="Career highlights">
+          <div class="about__highlight" role="listitem" appScrollReveal [delay]="200">
+            <i class="fas fa-briefcase" aria-hidden="true"></i>
             <div>
               <span class="about__highlight-number">{{ personalInfo.yearsExperience }}+</span>
               <span class="about__highlight-label">Years Experience</span>
             </div>
           </div>
-          <div class="about__highlight" appScrollReveal [delay]="300">
-            <i class="fas fa-project-diagram"></i>
+          <div class="about__highlight" role="listitem" appScrollReveal [delay]="300">
+            <i class="fas fa-project-diagram" aria-hidden="true"></i>
             <div>
               <span class="about__highlight-number">50+</span>
               <span class="about__highlight-label">Projects Completed</span>
             </div>
           </div>
-          <div class="about__highlight" appScrollReveal [delay]="400">
-            <i class="fas fa-users"></i>
+          <div class="about__highlight" role="listitem" appScrollReveal [delay]="400">
+            <i class="fas fa-users" aria-hidden="true"></i>
             <div>
               <span class="about__highlight-number">3</span>
               <span class="about__highlight-label">Companies</span>

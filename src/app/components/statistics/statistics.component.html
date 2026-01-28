@@ -1,0 +1,22 @@
+<section id="statistics" class="section statistics-section" aria-labelledby="statistics-title">
+  <div class="container">
+    <h2 id="statistics-title" class="section__title" appScrollReveal>By The Numbers</h2>
+
+    <div class="statistics" role="list" aria-label="Career statistics">
+      @for (stat of statistics; track stat.label; let i = $index) {
+        <div class="statistic" role="listitem" appScrollReveal [delay]="i * 100">
+          <div class="statistic__icon" aria-hidden="true">
+            <i [class]="stat.icon"></i>
+          </div>
+          <div class="statistic__value">
+            <span [appCounterAnimate]="stat.value" class="statistic__number"></span>
+            @if (stat.suffix) {
+              <span class="statistic__suffix">{{ stat.suffix }}</span>
+            }
+          </div>
+          <div class="statistic__label">{{ stat.label }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

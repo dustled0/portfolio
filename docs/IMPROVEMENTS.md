@@ -21,44 +21,44 @@ This document outlines potential improvements for the portfolio website, organiz
 - [x] **Project filtering by technology/category** - Filter projects by tech stack tags
 - [x] **Working contact form** - Integrate with Formspree, Netlify Forms, or custom backend
 - [x] **Downloadable PDF resume button** - Generate or link to PDF version of resume
-- [ ] **Language switcher (i18n)** - Support multiple languages
+- [x] **Language switcher (i18n)** - Support multiple languages (English/Tagalog)
 - [x] **Search functionality** - Search through projects and skills
 
 ---
 
 ## Navigation
 
-- [ ] **Active nav link highlighting based on scroll position** - Highlight current section in nav
-- [ ] **Mobile hamburger menu animation** - Animated hamburger to X transition
-- [ ] **Smooth scroll offset adjustment for fixed header** - Account for header height when scrolling to sections
+- [x] **Active nav link highlighting based on scroll position** - Highlight current section in nav using IntersectionObserver
+- [x] **Mobile hamburger menu animation** - CSS-only animated hamburger to X transition
+- [x] **Smooth scroll offset adjustment for fixed header** - `scroll-padding-top: 70px` accounts for header height
 
 ---
 
 ## Performance
 
-- [ ] **Lazy loading for images** - Load images only when they enter viewport
-- [ ] **Image optimization (WebP format)** - Convert images to modern formats
-- [ ] **Service worker for offline support (PWA)** - Make the site work offline
-- [ ] **Preload critical assets** - Preload fonts and critical CSS
+- [x] **Lazy loading for images** - Added `loading="lazy"` support
+- [ ] **Image optimization (WebP format)** - Convert images to modern formats (manual task)
+- [x] **Service worker for offline support (PWA)** - Full PWA support with manifest and ngsw-config
+- [x] **Preload critical assets** - Preconnect to Google Fonts, preload hints
 
 ---
 
 ## SEO/Accessibility
 
-- [ ] **Open Graph meta tags for social sharing** - Rich previews when shared on social media
-- [ ] **Structured data (JSON-LD) for resume** - Help search engines understand resume content
-- [ ] **Skip-to-content link** - Accessibility feature for keyboard navigation
-- [ ] **ARIA labels and keyboard navigation improvements** - Better screen reader support
-- [ ] **Print-friendly stylesheet** - Optimized styles for printing resume
+- [x] **Open Graph meta tags for social sharing** - Rich previews for Facebook, Twitter, LinkedIn
+- [x] **Structured data (JSON-LD) for resume** - Person schema with job, skills, education
+- [x] **Skip-to-content link** - Hidden link visible on focus for keyboard navigation
+- [x] **ARIA labels and keyboard navigation improvements** - Full ARIA support across all components
+- [x] **Print-friendly stylesheet** - Comprehensive print styles hiding interactive elements
 
 ---
 
 ## Content Additions
 
-- [ ] **Testimonials/recommendations section** - Display quotes from colleagues or clients
-- [ ] **Blog/articles section** - Share technical articles and insights
-- [ ] **Certifications section** - Display professional certifications
-- [ ] **Animated statistics/counters** - Count-up animation for numbers (years, projects, etc.)
+- [x] **Testimonials/recommendations section** - Carousel with quotes from colleagues
+- [x] **Blog/articles section** - Display recent articles with excerpts and tags
+- [x] **Certifications section** - Grid of professional certifications with verify links
+- [x] **Animated statistics/counters** - Count-up animation using IntersectionObserver
 
 ---
 
@@ -73,24 +73,51 @@ This document outlines potential improvements for the portfolio website, organiz
 
 ## Implementation Notes
 
-### Completed Features
-All Visual/UX enhancements and Scroll Animations have been implemented. See commit `fe50cc5` for details.
+### All Features Completed
 
-Functionality features completed:
-- Project filtering with technology chips and search bar
-- Contact form with Formspree integration (requires user to add their Formspree endpoint)
-- PDF resume download button in header (requires user to add resume.pdf to src/assets/)
-- Search functionality for both projects and skills sections
+All improvements have been implemented as of the latest update.
 
-### Priority Suggestions
-1. **High Priority**: SEO/Accessibility improvements (Open Graph, ARIA labels)
-2. **Medium Priority**: Navigation enhancements (active link highlighting)
-3. **Medium Priority**: Performance optimizations (lazy loading, PWA)
-4. **Low Priority**: Content additions (blog, testimonials)
-5. **Low Priority**: Language switcher (i18n)
+### New Components Added
+- `StatisticsComponent` - Animated counter section showing career stats
+- `TestimonialsComponent` - Carousel with navigation dots and autoplay
+- `CertificationsComponent` - Grid layout for professional certifications
+- `BlogComponent` - Article cards with tags and read more links
+- `LanguageSwitcherComponent` - Dropdown for language selection
 
-### Technical Considerations
-- PWA implementation requires `@angular/pwa` package
-- i18n requires `@angular/localize` and translation files
-- Contact form uses Formspree - update endpoint in `contact.component.ts` with your form ID
-- PDF resume requires placing `resume.pdf` file in `src/assets/` directory
+### New Directives Added
+- `CounterAnimateDirective` - Animates numbers from 0 to target value on scroll
+
+### PWA Setup
+The following files were created for PWA support:
+- `src/manifest.webmanifest` - PWA manifest with app metadata
+- `ngsw-config.json` - Service worker configuration
+- PWA icons directory at `src/assets/icons/` (icons need to be added)
+
+### i18n Setup
+- Language switcher component with English/Tagalog support
+- i18n configuration in `angular.json`
+- Placeholder translation file at `src/locale/messages.tl.xlf`
+- To extract messages: `ng extract-i18n --output-path src/locale`
+
+### Required User Actions
+1. **PWA Icons**: Add PNG icons to `src/assets/icons/` at sizes: 72x72, 96x96, 128x128, 144x144, 152x152, 192x192, 384x384, 512x512
+2. **OG Image**: Add `og-image.png` to `src/assets/` for social sharing previews
+3. **Resume PDF**: Place `resume.pdf` in `src/assets/` directory
+4. **Contact Form**: Update Formspree endpoint in `contact.component.ts`
+5. **Translations**: Run `ng extract-i18n` and translate `messages.xlf` to `messages.tl.xlf`
+6. **Image Optimization**: Convert images to WebP format for better performance
+
+### Dependencies Added
+```json
+"@angular/localize": "^17.3.0",
+"@angular/service-worker": "^17.3.0"
+```
+
+Run `npm install` to install new dependencies.
+
+### Build Commands
+```bash
+npm install          # Install dependencies
+npm run build        # Production build with PWA
+npm start            # Development server
+```

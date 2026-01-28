@@ -1,23 +1,25 @@
-<section id="projects" class="section">
+<section id="projects" class="section" aria-labelledby="projects-title">
   <div class="container">
-    <h2 class="section__title" appScrollReveal>Featured Projects</h2>
+    <h2 id="projects-title" class="section__title" appScrollReveal>Featured Projects</h2>
 
     <div class="projects__controls" appScrollReveal [delay]="50">
       <div class="projects__search">
-        <i class="fas fa-search"></i>
+        <i class="fas fa-search" aria-hidden="true"></i>
         <input
           type="text"
           [(ngModel)]="searchQuery"
           placeholder="Search projects..."
           class="projects__search-input"
-          aria-label="Search projects">
+          aria-label="Search projects"
+          aria-describedby="projects-search-status">
       </div>
 
-      <div class="projects__filters">
+      <div class="projects__filters" role="group" aria-label="Filter projects by technology">
         @for (tech of allTechnologies; track tech) {
           <button
             class="projects__filter-chip"
             [class.projects__filter-chip--active]="activeFilter === tech"
+            [attr.aria-pressed]="activeFilter === tech"
             (click)="setFilter(tech)">
             {{ tech }}
           </button>
@@ -25,30 +27,30 @@
       </div>
     </div>
 
-    <div class="projects">
+    <div class="projects" role="list" aria-live="polite">
       @for (project of filteredProjects; track project.name; let i = $index) {
-        <div class="project card" appScrollReveal [delay]="i * 100">
+        <article class="project card" role="listitem" appScrollReveal [delay]="i * 100">
           <div class="project__icon">
-            <i class="fas fa-folder-open"></i>
+            <i class="fas fa-folder-open" aria-hidden="true"></i>
           </div>
           <h3 class="project__name">{{ project.name }}</h3>
           <p class="project__company">
-            <i class="fas fa-building"></i>
+            <i class="fas fa-building" aria-hidden="true"></i>
             {{ project.company }}
           </p>
           <p class="project__description">{{ project.description }}</p>
-          <div class="project__technologies">
+          <div class="project__technologies" aria-label="Technologies used">
             @for (tech of project.technologies; track tech) {
               <span class="tag">{{ tech }}</span>
             }
           </div>
-        </div>
+        </article>
       }
     </div>
 
     @if (filteredProjects.length === 0) {
-      <div class="projects__no-results" appScrollReveal>
-        <i class="fas fa-search"></i>
+      <div id="projects-search-status" class="projects__no-results" appScrollReveal role="status" aria-live="polite">
+        <i class="fas fa-search" aria-hidden="true"></i>
         <p>No projects found matching your criteria.</p>
         <button class="btn btn--secondary" (click)="activeFilter = 'All'; searchQuery = ''">
           Clear filters

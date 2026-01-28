@@ -1,0 +1,30 @@
+<div class="language-switcher" (clickOutside)="closeDropdown()">
+  <button
+    class="language-switcher__toggle"
+    (click)="toggleDropdown()"
+    [attr.aria-expanded]="isOpen"
+    aria-haspopup="listbox"
+    aria-label="Select language">
+    <span class="language-switcher__flag">{{ currentLanguage.flag }}</span>
+    <span class="language-switcher__code">{{ currentLanguage.code | uppercase }}</span>
+    <i class="fas fa-chevron-down" [class.fa-rotate-180]="isOpen" aria-hidden="true"></i>
+  </button>
+
+  @if (isOpen) {
+    <ul class="language-switcher__dropdown" role="listbox" aria-label="Available languages">
+      @for (lang of languages; track lang.code) {
+        <li
+          class="language-switcher__option"
+          [class.language-switcher__option--active]="lang.code === currentLanguage.code"
+          role="option"
+          [attr.aria-selected]="lang.code === currentLanguage.code"
+          (click)="selectLanguage(lang)"
+          (keydown.enter)="selectLanguage(lang)"
+          tabindex="0">
+          <span class="language-switcher__flag">{{ lang.flag }}</span>
+          <span class="language-switcher__label">{{ lang.label }}</span>
+        </li>
+      }
+    </ul>
+  }
+</div>

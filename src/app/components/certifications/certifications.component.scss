@@ -1,0 +1,101 @@
+$primary-brown: #5D4037;
+$primary-brown-light: #795548;
+$accent-tan: #D7CCC8;
+$white: #FFFFFF;
+
+.certifications {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.certification {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+
+  &__icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, $primary-brown, $primary-brown-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    font-size: 1.75rem;
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-brown);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  &__issuer,
+  &__date,
+  &__credential {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0.25rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    i {
+      width: 16px;
+      opacity: 0.7;
+    }
+  }
+
+  &__issuer {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  &__verify {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    background: $accent-tan;
+    color: $primary-brown;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $primary-brown;
+      color: $white;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Animation on hover
+.certification:hover {
+  .certification__icon {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="tl" datatype="plaintext" original="ng2.template">
+    <body>
+      <!-- Tagalog translations will be added here when extracted -->
+      <!-- Run: ng extract-i18n --output-path src/locale -->
+      <!-- Then translate the messages.xlf file and save as messages.tl.xlf -->
+    </body>
+  </file>
+</xliff>

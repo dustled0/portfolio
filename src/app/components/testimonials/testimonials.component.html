@@ -1,0 +1,56 @@
+<section id="testimonials" class="section section--alt" aria-labelledby="testimonials-title">
+  <div class="container">
+    <h2 id="testimonials-title" class="section__title" appScrollReveal>What People Say</h2>
+
+    <div class="testimonials-carousel" appScrollReveal [delay]="100">
+      <button
+        class="testimonials-carousel__nav testimonials-carousel__nav--prev"
+        (click)="previousTestimonial()"
+        aria-label="Previous testimonial">
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+      </button>
+
+      <div class="testimonials-carousel__content" role="region" aria-live="polite" aria-atomic="true">
+        <div class="testimonial">
+          <div class="testimonial__quote-icon" aria-hidden="true">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <blockquote class="testimonial__quote">
+            {{ currentTestimonial.quote }}
+          </blockquote>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar" aria-hidden="true">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="testimonial__info">
+              <cite class="testimonial__name">{{ currentTestimonial.name }}</cite>
+              <p class="testimonial__position">
+                {{ currentTestimonial.position }} at {{ currentTestimonial.company }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="testimonials-carousel__nav testimonials-carousel__nav--next"
+        (click)="nextTestimonial()"
+        aria-label="Next testimonial">
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+      </button>
+
+      <div class="testimonials-carousel__dots" role="tablist" aria-label="Testimonial navigation">
+        @for (testimonial of testimonials; track testimonial.name; let i = $index) {
+          <button
+            class="testimonials-carousel__dot"
+            [class.testimonials-carousel__dot--active]="i === currentIndex"
+            (click)="goToTestimonial(i)"
+            role="tab"
+            [attr.aria-selected]="i === currentIndex"
+            [attr.aria-label]="'Go to testimonial ' + (i + 1)">
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+</section>
