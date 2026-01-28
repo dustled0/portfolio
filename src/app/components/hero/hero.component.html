@@ -17,7 +17,16 @@
   <div class="hero__content">
     <div class="hero__avatar">
       <img src="assets/profile-pic.png" alt="Dustine Lee A. Dequito" class="hero__avatar-img">
+      @if (personalInfo.availableForWork) {
+        <div class="hero__availability-indicator" title="Available for work"></div>
+      }
     </div>
+    @if (personalInfo.availableForWork) {
+      <div class="hero__availability-badge">
+        <span class="hero__availability-dot"></span>
+        <span class="hero__availability-text">{{ personalInfo.availabilityStatus || 'Available for Freelance' }}</span>
+      </div>
+    }
     <h1 id="hero-name" class="hero__name">{{ personalInfo.name }}</h1>
     <p class="hero__title" [attr.aria-label]="'Job title: ' + personalInfo.title">
       <span class="typing-cursor" [appTyping]="typingTexts" [typingSpeed]="80" [deletingSpeed]="40" [pauseDuration]="2500" aria-hidden="true"></span>

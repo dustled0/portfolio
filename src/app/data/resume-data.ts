@@ -72,6 +72,8 @@ export interface ResumeData {
     email: string;
     location: string;
     yearsExperience: number;
+    availableForWork: boolean;
+    availabilityStatus?: string;
   };
   profile: string;
   skills: Skill[];
@@ -91,7 +93,9 @@ export const RESUME_DATA: ResumeData = {
     phone: '+(63) 0919 0676 411',
     email: 'dustled0@gmail.com',
     location: 'Cebu City, Philippines',
-    yearsExperience: 15
+    yearsExperience: 15,
+    availableForWork: true,
+    availabilityStatus: 'Available for Freelance'
   },
   profile: `Experienced Web Developer with 15 years of expertise in building dynamic and responsive web applications. Proficient in modern frontend frameworks including Angular and React JS, with strong skills in DAML for blockchain-based applications. Adept at creating user-centric designs using SCSS and Bootstrap, while also leveraging PHP and WordPress for backend development.`,
   skills: [
