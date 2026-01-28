@@ -77,6 +77,14 @@ This document outlines potential improvements for the portfolio website, organiz
 
 All improvements have been implemented as of the latest update.
 
+### Visual Enhancements Added (Latest)
+- **Animated Background Particles** - Floating geometric shapes in hero section with CSS animations
+- **Gradient Mesh Overlay** - Animated radial gradients in hero and contact sections
+- **Glassmorphism Cards** - Backdrop blur, semi-transparent backgrounds on skills, projects, and contact cards
+- **Custom Cursor** - Ring + dot cursor with smooth follow effect and hover state changes
+- **Animated Skill Icons** - Gradient icons with pulse animation, shimmer effect on progress bars
+- **Enhanced Hover Effects** - Left border accent, level badge color change, bar height increase on skill items
+
 ### New Components Added
 - `StatisticsComponent` - Animated counter section showing career stats
 - `TestimonialsComponent` - Carousel with navigation dots and autoplay
@@ -86,6 +94,7 @@ All improvements have been implemented as of the latest update.
 
 ### New Directives Added
 - `CounterAnimateDirective` - Animates numbers from 0 to target value on scroll
+- `CustomCursorDirective` - Custom cursor with ring + dot effect and hover states
 
 ### PWA Setup
 The following files were created for PWA support:
@@ -128,13 +137,13 @@ npm start            # Development server
 
 ### Visual & Aesthetic Enhancements
 
-- [ ] **Animated background particles/gradient mesh** - Add dynamic background to hero section
+- [x] **Animated background particles/gradient mesh** - Floating particles and animated gradient mesh in hero and contact sections
 - [ ] **Professional photo/avatar** - Include profile image in hero or about section
 - [ ] **Project screenshots/thumbnails** - Visual previews for each portfolio project
 - [ ] **Video demos/GIFs** - Animated demonstrations of projects in action
-- [ ] **Glassmorphism card effects** - Modern frosted glass styling on cards
-- [ ] **Custom cursor effects** - Interactive cursor on hover states
-- [ ] **Animated skill icons** - Icon animations beyond static bars
+- [x] **Glassmorphism card effects** - Modern frosted glass styling on skills, projects, and contact cards
+- [x] **Custom cursor effects** - Interactive ring + dot cursor with hover states on interactive elements
+- [x] **Animated skill icons** - Pulsing gradient icons, shimmer effect on progress bars, enhanced hover states
 
 ### Interactive Features
 
@@ -184,7 +193,7 @@ npm start            # Development server
 | Project screenshots | High | Low |
 | Availability badge | High | Low |
 | Client logos section | High | Low |
-| Glassmorphism cards | Medium | Low |
+| ~~Glassmorphism cards~~ | ~~Medium~~ | ~~Done~~ |
 | Calendly integration | High | Low |
 | Case study (1 project) | High | Medium |
 | GitHub stats | Medium | Medium |
@@ -201,6 +210,6 @@ These can be implemented quickly for maximum impact:
 - [ ] Add project screenshots to `resume-data.ts`
 - [ ] Create availability badge component
 - [ ] Add client/company logos section
-- [ ] Implement glassmorphism CSS on existing cards
+- [x] Implement glassmorphism CSS on existing cards
 - [ ] Add Calendly button to contact section
 - [ ] Write one detailed case study
