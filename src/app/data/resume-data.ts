@@ -64,6 +64,13 @@ export interface Statistic {
   icon: string;
 }
 
+export interface Client {
+  name: string;
+  logo?: string;
+  icon?: string;
+  url?: string;
+}
+
 export interface ResumeData {
   personalInfo: {
     name: string;
@@ -84,6 +91,7 @@ export interface ResumeData {
   certifications: Certification[];
   blogPosts: BlogPost[];
   statistics: Statistic[];
+  clients: Client[];
 }
 
 export const RESUME_DATA: ResumeData = {
@@ -314,6 +322,38 @@ export const RESUME_DATA: ResumeData = {
       label: 'Code Reviews',
       suffix: '+',
       icon: 'fas fa-code'
+    }
+  ],
+  clients: [
+    {
+      name: 'Accenture',
+      icon: 'fas fa-greater-than',
+      url: 'https://www.accenture.com'
+    },
+    {
+      name: 'RipeConcept',
+      icon: 'fas fa-lightbulb',
+      url: '#'
+    },
+    {
+      name: 'Smooth Dezigns',
+      icon: 'fas fa-palette',
+      url: '#'
+    },
+    {
+      name: 'Enterprise Clients',
+      icon: 'fas fa-building',
+      url: '#'
+    },
+    {
+      name: 'Startups',
+      icon: 'fas fa-rocket',
+      url: '#'
+    },
+    {
+      name: 'E-Commerce',
+      icon: 'fas fa-shopping-bag',
+      url: '#'
     }
   ]
 };

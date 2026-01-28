@@ -1,0 +1,30 @@
+<section class="clients section" aria-labelledby="clients-title">
+  <div class="container">
+    <h2 id="clients-title" class="section__title" appScrollReveal>Trusted By</h2>
+    <p class="clients__subtitle" appScrollReveal [delay]="100">
+      Companies and clients I've had the pleasure to work with
+    </p>
+
+    <div class="clients__grid" appScrollReveal [delay]="200">
+      @for (client of clients; track client.name; let i = $index) {
+        <a
+          [href]="client.url || '#'"
+          class="clients__item"
+          [class.clients__item--no-link]="!client.url || client.url === '#'"
+          [attr.target]="client.url && client.url !== '#' ? '_blank' : null"
+          [attr.rel]="client.url && client.url !== '#' ? 'noopener noreferrer' : null"
+          [attr.aria-label]="'Client: ' + client.name"
+          [style.animation-delay]="(i * 100) + 'ms'">
+          <div class="clients__logo">
+            @if (client.logo) {
+              <img [src]="client.logo" [alt]="client.name + ' logo'" loading="lazy">
+            } @else {
+              <i [class]="client.icon || 'fas fa-building'" aria-hidden="true"></i>
+            }
+          </div>
+          <span class="clients__name">{{ client.name }}</span>
+        </a>
+      }
+    </div>
+  </div>
+</section>

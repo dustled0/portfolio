@@ -157,7 +157,7 @@ npm start            # Development server
 
 - [ ] **Case studies section** - Detailed Problem → Solution → Results breakdowns
 - [ ] **Services/offerings section** - Clear list of services with descriptions
-- [ ] **Client logos carousel** - "Worked with..." section showing past clients
+- [x] **Client logos carousel** - "Trusted By" grid section with company icons and hover effects
 - [x] **Availability status indicator** - Pulsing green badge in hero section with configurable status text
 - [ ] **Pricing tiers** - Optional service pricing display
 
@@ -192,7 +192,7 @@ npm start            # Development server
 |---------|--------------|----------------------|
 | ~~Project screenshots~~ | ~~High~~ | ~~Done~~ |
 | ~~Availability badge~~ | ~~High~~ | ~~Done~~ |
-| Client logos section | High | Low |
+| ~~Client logos section~~ | ~~High~~ | ~~Done~~ |
 | ~~Glassmorphism cards~~ | ~~Medium~~ | ~~Done~~ |
 | Calendly integration | High | Low |
 | Case study (1 project) | High | Medium |
@@ -209,7 +209,7 @@ These can be implemented quickly for maximum impact:
 
 - [x] Add project screenshots to `resume-data.ts`
 - [x] Create availability badge component
-- [ ] Add client/company logos section
+- [x] Add client/company logos section
 - [x] Implement glassmorphism CSS on existing cards
 - [ ] Add Calendly button to contact section
 - [ ] Write one detailed case study
