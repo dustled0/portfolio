@@ -6,7 +6,80 @@ $text-dark: #3E2723;
 $accent-orange: #8D6E63;
 $white: #FFFFFF;
 
+.skills__search {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto 2rem;
+
+  i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-orange, $accent-orange);
+    transition: color 0.3s ease;
+  }
+
+  &-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+    border: 2px solid var(--accent-tan, $accent-tan);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--card-bg, $white);
+    color: var(--text-primary, $text-dark);
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary-brown, $primary-brown);
+    }
+
+    &::placeholder {
+      color: var(--accent-orange, $accent-orange);
+      opacity: 0.7;
+    }
+  }
+}
+
+.skills__no-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-primary, $text-dark);
+
+  i {
+    font-size: 3rem;
+    color: var(--accent-tan, $accent-tan);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-orange, $accent-orange);
+  }
+
+  .btn--secondary {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--primary-brown, $primary-brown);
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--primary-brown, $primary-brown);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: var(--primary-brown, $primary-brown);
+      color: $white;
+    }
+  }
+}
+
 .skills {
+  &--hidden {
+    display: none;
+  }
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;

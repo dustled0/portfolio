@@ -2,8 +2,31 @@
   <div class="container">
     <h2 class="section__title" appScrollReveal>Featured Projects</h2>
 
+    <div class="projects__controls" appScrollReveal [delay]="50">
+      <div class="projects__search">
+        <i class="fas fa-search"></i>
+        <input
+          type="text"
+          [(ngModel)]="searchQuery"
+          placeholder="Search projects..."
+          class="projects__search-input"
+          aria-label="Search projects">
+      </div>
+
+      <div class="projects__filters">
+        @for (tech of allTechnologies; track tech) {
+          <button
+            class="projects__filter-chip"
+            [class.projects__filter-chip--active]="activeFilter === tech"
+            (click)="setFilter(tech)">
+            {{ tech }}
+          </button>
+        }
+      </div>
+    </div>
+
     <div class="projects">
-      @for (project of projects; track project.name; let i = $index) {
+      @for (project of filteredProjects; track project.name; let i = $index) {
         <div class="project card" appScrollReveal [delay]="i * 100">
           <div class="project__icon">
             <i class="fas fa-folder-open"></i>
@@ -22,5 +45,15 @@
         </div>
       }
     </div>
+
+    @if (filteredProjects.length === 0) {
+      <div class="projects__no-results" appScrollReveal>
+        <i class="fas fa-search"></i>
+        <p>No projects found matching your criteria.</p>
+        <button class="btn btn--secondary" (click)="activeFilter = 'All'; searchQuery = ''">
+          Clear filters
+        </button>
+      </div>
+    }
   </div>
 </section>

@@ -2,86 +2,114 @@
   <div class="container">
     <h2 class="section__title" appScrollReveal>Skills & Expertise</h2>
 
-    <div class="skills">
-      <div class="skills__category" appScrollReveal [delay]="100">
-        <h3 class="skills__category-title">
-          <i class="fas fa-code"></i>
-          Frontend Development
-        </h3>
-        <div class="skills__list">
-          @for (skill of frontendSkills; track skill.name) {
-            <div class="skill">
-              <div class="skill__header">
-                <span class="skill__name">{{ skill.name }}</span>
-                <span class="skill__level">{{ skill.level }}%</span>
-              </div>
-              <div class="skill__bar">
-                <div class="skill__progress" [appSkillAnimate]="skill.level"></div>
-              </div>
-            </div>
-          }
-        </div>
-      </div>
+    <div class="skills__search" appScrollReveal [delay]="50">
+      <i class="fas fa-search"></i>
+      <input
+        type="text"
+        [(ngModel)]="searchQuery"
+        placeholder="Search skills..."
+        class="skills__search-input"
+        aria-label="Search skills">
+    </div>
 
-      <div class="skills__category" appScrollReveal [delay]="200">
-        <h3 class="skills__category-title">
-          <i class="fas fa-server"></i>
-          Backend Development
-        </h3>
-        <div class="skills__list">
-          @for (skill of backendSkills; track skill.name) {
-            <div class="skill">
-              <div class="skill__header">
-                <span class="skill__name">{{ skill.name }}</span>
-                <span class="skill__level">{{ skill.level }}%</span>
-              </div>
-              <div class="skill__bar">
-                <div class="skill__progress" [appSkillAnimate]="skill.level"></div>
-              </div>
-            </div>
-          }
-        </div>
+    @if (!hasResults) {
+      <div class="skills__no-results" appScrollReveal>
+        <i class="fas fa-search"></i>
+        <p>No skills found matching "{{ searchQuery }}"</p>
+        <button class="btn btn--secondary" (click)="searchQuery = ''">
+          Clear search
+        </button>
       </div>
+    }
 
-      <div class="skills__category" appScrollReveal [delay]="300">
-        <h3 class="skills__category-title">
-          <i class="fas fa-tools"></i>
-          Tools & Technologies
-        </h3>
-        <div class="skills__list">
-          @for (skill of toolsSkills; track skill.name) {
-            <div class="skill">
-              <div class="skill__header">
-                <span class="skill__name">{{ skill.name }}</span>
-                <span class="skill__level">{{ skill.level }}%</span>
+    <div class="skills" [class.skills--hidden]="!hasResults">
+      @if (frontendSkills.length > 0) {
+        <div class="skills__category" appScrollReveal [delay]="100">
+          <h3 class="skills__category-title">
+            <i class="fas fa-code"></i>
+            Frontend Development
+          </h3>
+          <div class="skills__list">
+            @for (skill of frontendSkills; track skill.name) {
+              <div class="skill">
+                <div class="skill__header">
+                  <span class="skill__name">{{ skill.name }}</span>
+                  <span class="skill__level">{{ skill.level }}%</span>
+                </div>
+                <div class="skill__bar">
+                  <div class="skill__progress" [appSkillAnimate]="skill.level"></div>
+                </div>
               </div>
-              <div class="skill__bar">
-                <div class="skill__progress" [appSkillAnimate]="skill.level"></div>
-              </div>
-            </div>
-          }
+            }
+          </div>
         </div>
-      </div>
+      }
 
-      <div class="skills__category" appScrollReveal [delay]="400">
-        <h3 class="skills__category-title">
-          <i class="fas fa-star"></i>
-          Other Skills
-        </h3>
-        <div class="skills__list">
-          @for (skill of otherSkills; track skill.name) {
-            <div class="skill">
-              <div class="skill__header">
-                <span class="skill__name">{{ skill.name }}</span>
-                <span class="skill__level">{{ skill.level }}%</span>
+      @if (backendSkills.length > 0) {
+        <div class="skills__category" appScrollReveal [delay]="200">
+          <h3 class="skills__category-title">
+            <i class="fas fa-server"></i>
+            Backend Development
+          </h3>
+          <div class="skills__list">
+            @for (skill of backendSkills; track skill.name) {
+              <div class="skill">
+                <div class="skill__header">
+                  <span class="skill__name">{{ skill.name }}</span>
+                  <span class="skill__level">{{ skill.level }}%</span>
+                </div>
+                <div class="skill__bar">
+                  <div class="skill__progress" [appSkillAnimate]="skill.level"></div>
+                </div>
               </div>
-              <div class="skill__bar">
-                <div class="skill__progress" [appSkillAnimate]="skill.level"></div>
-              </div>
-            </div>
-          }
+            }
+          </div>
         </div>
-      </div>
+      }
+
+      @if (toolsSkills.length > 0) {
+        <div class="skills__category" appScrollReveal [delay]="300">
+          <h3 class="skills__category-title">
+            <i class="fas fa-tools"></i>
+            Tools & Technologies
+          </h3>
+          <div class="skills__list">
+            @for (skill of toolsSkills; track skill.name) {
+              <div class="skill">
+                <div class="skill__header">
+                  <span class="skill__name">{{ skill.name }}</span>
+                  <span class="skill__level">{{ skill.level }}%</span>
+                </div>
+                <div class="skill__bar">
+                  <div class="skill__progress" [appSkillAnimate]="skill.level"></div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+
+      @if (otherSkills.length > 0) {
+        <div class="skills__category" appScrollReveal [delay]="400">
+          <h3 class="skills__category-title">
+            <i class="fas fa-star"></i>
+            Other Skills
+          </h3>
+          <div class="skills__list">
+            @for (skill of otherSkills; track skill.name) {
+              <div class="skill">
+                <div class="skill__header">
+                  <span class="skill__name">{{ skill.name }}</span>
+                  <span class="skill__level">{{ skill.level }}%</span>
+                </div>
+                <div class="skill__bar">
+                  <div class="skill__progress" [appSkillAnimate]="skill.level"></div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
     </div>
   </div>
 </section>

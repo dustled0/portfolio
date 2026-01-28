@@ -18,11 +18,11 @@ This document outlines potential improvements for the portfolio website, organiz
 
 ## Functionality
 
-- [ ] **Project filtering by technology/category** - Filter projects by tech stack tags
-- [ ] **Working contact form** - Integrate with Formspree, Netlify Forms, or custom backend
-- [ ] **Downloadable PDF resume button** - Generate or link to PDF version of resume
+- [x] **Project filtering by technology/category** - Filter projects by tech stack tags
+- [x] **Working contact form** - Integrate with Formspree, Netlify Forms, or custom backend
+- [x] **Downloadable PDF resume button** - Generate or link to PDF version of resume
 - [ ] **Language switcher (i18n)** - Support multiple languages
-- [ ] **Search functionality** - Search through projects and skills
+- [x] **Search functionality** - Search through projects and skills
 
 ---
 
@@ -76,13 +76,21 @@ This document outlines potential improvements for the portfolio website, organiz
 ### Completed Features
 All Visual/UX enhancements and Scroll Animations have been implemented. See commit `fe50cc5` for details.
 
+Functionality features completed:
+- Project filtering with technology chips and search bar
+- Contact form with Formspree integration (requires user to add their Formspree endpoint)
+- PDF resume download button in header (requires user to add resume.pdf to src/assets/)
+- Search functionality for both projects and skills sections
+
 ### Priority Suggestions
 1. **High Priority**: SEO/Accessibility improvements (Open Graph, ARIA labels)
 2. **Medium Priority**: Navigation enhancements (active link highlighting)
-3. **Medium Priority**: Contact form functionality
+3. **Medium Priority**: Performance optimizations (lazy loading, PWA)
 4. **Low Priority**: Content additions (blog, testimonials)
+5. **Low Priority**: Language switcher (i18n)
 
 ### Technical Considerations
 - PWA implementation requires `@angular/pwa` package
 - i18n requires `@angular/localize` and translation files
-- Contact form backend options: Formspree (free tier), Netlify Forms, or custom API
+- Contact form uses Formspree - update endpoint in `contact.component.ts` with your form ID
+- PDF resume requires placing `resume.pdf` file in `src/assets/` directory

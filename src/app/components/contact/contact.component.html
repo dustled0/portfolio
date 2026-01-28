@@ -32,6 +32,99 @@
           <p class="contact__card-value">{{ personalInfo.location }}</p>
         </div>
       </div>
+
+      <div class="contact__form-wrapper" appScrollReveal [delay]="500">
+        <h3 class="contact__form-title">Send Me a Message</h3>
+
+        @if (formStatus === 'success') {
+          <div class="contact__form-success">
+            <i class="fas fa-check-circle"></i>
+            <h4>Message Sent!</h4>
+            <p>Thank you for reaching out. I'll get back to you soon.</p>
+            <button class="btn btn--primary" (click)="resetForm()">
+              Send Another Message
+            </button>
+          </div>
+        } @else {
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact__form">
+            <div class="form-group">
+              <label for="name" class="form-label">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                formControlName="name"
+                class="form-input"
+                [class.form-input--error]="isFieldInvalid('name')"
+                placeholder="John Doe">
+              @if (isFieldInvalid('name')) {
+                <span class="form-error">{{ getFieldError('name') }}</span>
+              }
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Your Email</label>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                class="form-input"
+                [class.form-input--error]="isFieldInvalid('email')"
+                placeholder="john@example.com">
+              @if (isFieldInvalid('email')) {
+                <span class="form-error">{{ getFieldError('email') }}</span>
+              }
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                formControlName="subject"
+                class="form-input"
+                [class.form-input--error]="isFieldInvalid('subject')"
+                placeholder="Project Inquiry">
+              @if (isFieldInvalid('subject')) {
+                <span class="form-error">{{ getFieldError('subject') }}</span>
+              }
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea
+                id="message"
+                formControlName="message"
+                class="form-input form-textarea"
+                [class.form-input--error]="isFieldInvalid('message')"
+                placeholder="Tell me about your project..."
+                rows="5"></textarea>
+              @if (isFieldInvalid('message')) {
+                <span class="form-error">{{ getFieldError('message') }}</span>
+              }
+            </div>
+
+            @if (formStatus === 'error') {
+              <div class="form-error-message">
+                <i class="fas fa-exclamation-circle"></i>
+                {{ errorMessage }}
+              </div>
+            }
+
+            <button
+              type="submit"
+              class="btn btn--submit"
+              [disabled]="formStatus === 'submitting'">
+              @if (formStatus === 'submitting') {
+                <i class="fas fa-spinner fa-spin"></i>
+                Sending...
+              } @else {
+                <i class="fas fa-paper-plane"></i>
+                Send Message
+              }
+            </button>
+          </form>
+        }
+      </div>
     </div>
   </div>
 
