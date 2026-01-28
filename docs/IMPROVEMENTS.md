@@ -139,7 +139,7 @@ npm start            # Development server
 
 - [x] **Animated background particles/gradient mesh** - Floating particles and animated gradient mesh in hero and contact sections
 - [ ] **Professional photo/avatar** - Include profile image in hero or about section
-- [ ] **Project screenshots/thumbnails** - Visual previews for each portfolio project
+- [x] **Project screenshots/thumbnails** - Visual card thumbnails with gradient placeholders and icon overlays; ready for real screenshots
 - [ ] **Video demos/GIFs** - Animated demonstrations of projects in action
 - [x] **Glassmorphism card effects** - Modern frosted glass styling on skills, projects, and contact cards
 - [x] **Custom cursor effects** - Interactive ring + dot cursor with hover states on interactive elements
@@ -190,7 +190,7 @@ npm start            # Development server
 
 | Feature | Client Impact | Implementation Effort |
 |---------|--------------|----------------------|
-| Project screenshots | High | Low |
+| ~~Project screenshots~~ | ~~High~~ | ~~Done~~ |
 | Availability badge | High | Low |
 | Client logos section | High | Low |
 | ~~Glassmorphism cards~~ | ~~Medium~~ | ~~Done~~ |
@@ -207,7 +207,7 @@ npm start            # Development server
 
 These can be implemented quickly for maximum impact:
 
-- [ ] Add project screenshots to `resume-data.ts`
+- [x] Add project screenshots to `resume-data.ts`
 - [ ] Create availability badge component
 - [ ] Add client/company logos section
 - [x] Implement glassmorphism CSS on existing cards

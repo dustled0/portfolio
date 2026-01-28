@@ -19,6 +19,8 @@ export interface Project {
   technologies: string[];
   company: string;
   link?: string;
+  screenshot?: string;
+  icon?: string;
 }
 
 export interface Education {
@@ -159,37 +161,49 @@ export const RESUME_DATA: ResumeData = {
       name: 'Enterprise Resource Planning System',
       description: 'Large-scale Angular application for managing company resources, inventory, and personnel.',
       technologies: ['Angular', 'TypeScript', 'SCSS', 'REST API'],
-      company: 'Accenture Inc.'
+      company: 'Accenture Inc.',
+      icon: 'fas fa-chart-line',
+      screenshot: 'assets/projects/erp-system.png'
     },
     {
       name: 'Blockchain Transaction Platform',
       description: 'DAML-based platform for secure and transparent financial transactions.',
       technologies: ['DAML', 'React', 'TypeScript', 'Blockchain'],
-      company: 'Accenture Inc.'
+      company: 'Accenture Inc.',
+      icon: 'fas fa-link',
+      screenshot: 'assets/projects/blockchain-platform.png'
     },
     {
       name: 'E-Commerce Platform',
       description: 'Full-featured online shopping platform with payment integration.',
       technologies: ['Angular', 'PHP', 'MySQL', 'Bootstrap'],
-      company: 'RipeConcept'
+      company: 'RipeConcept',
+      icon: 'fas fa-shopping-cart',
+      screenshot: 'assets/projects/ecommerce-platform.png'
     },
     {
       name: 'Real Estate Listing Portal',
       description: 'Property listing and search application with advanced filtering.',
       technologies: ['React', 'Node.js', 'MongoDB', 'SCSS'],
-      company: 'RipeConcept'
+      company: 'RipeConcept',
+      icon: 'fas fa-home',
+      screenshot: 'assets/projects/real-estate-portal.png'
     },
     {
       name: 'Corporate Website Portfolio',
       description: 'Collection of custom WordPress sites for various business clients.',
       technologies: ['WordPress', 'PHP', 'JavaScript', 'CSS'],
-      company: 'Smooth Dezigns'
+      company: 'Smooth Dezigns',
+      icon: 'fas fa-globe',
+      screenshot: 'assets/projects/corporate-websites.png'
     },
     {
       name: 'Content Management System',
       description: 'Custom CMS solution for managing dynamic website content.',
       technologies: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap'],
-      company: 'Smooth Dezigns'
+      company: 'Smooth Dezigns',
+      icon: 'fas fa-database',
+      screenshot: 'assets/projects/cms-system.png'
     }
   ],
   education: {

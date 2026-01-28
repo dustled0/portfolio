@@ -147,10 +147,11 @@ $white: #FFFFFF;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 16px;
-  padding: 1.5rem;
+  padding: 0;
   box-shadow: 0 8px 32px var(--glass-shadow, rgba(0, 0, 0, 0.1));
   border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.3));
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 
   &:hover {
     transform: translateY(-8px) scale(1.02);
@@ -158,34 +159,121 @@ $white: #FFFFFF;
     -webkit-backdrop-filter: blur(16px);
     box-shadow: 0 16px 48px var(--glass-shadow, rgba(0, 0, 0, 0.18));
     border-color: var(--accent-orange, $accent-orange);
+
+    .project__screenshot-overlay {
+      opacity: 1;
+    }
+
+    .project__screenshot-placeholder i {
+      transform: scale(1.2);
+    }
   }
 
-  &__icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, var(--primary-brown, $primary-brown), var(--accent-orange, $accent-orange));
-    border-radius: 12px;
+  // Screenshot/Thumbnail Section
+  &__screenshot {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--primary-brown, $primary-brown) 0%, var(--accent-orange, $accent-orange) 100%);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+
+  &__screenshot-placeholder {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(93, 64, 55, 0.3);
+    background: linear-gradient(135deg, var(--primary-brown, $primary-brown) 0%, var(--primary-brown-light, $primary-brown-light) 50%, var(--accent-orange, $accent-orange) 100%);
+    position: relative;
+    overflow: hidden;
+
+    // Decorative pattern overlay
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.08)"/></svg>') repeat;
+      background-size: 30px 30px;
+    }
+
+    // Animated gradient shine
+    &::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 60%
+      );
+      animation: screenshot-shine 3s ease-in-out infinite;
+    }
 
     i {
-      font-size: 1.75rem;
-      color: $white;
+      font-size: 3.5rem;
+      color: rgba($white, 0.9);
+      z-index: 1;
       transition: transform 0.3s ease;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
     }
   }
 
-  &:hover &__icon {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 6px 20px rgba(93, 64, 55, 0.4);
+  &__screenshot-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 
-    i {
-      transform: scale(1.1);
+  &__screenshot-label {
+    color: $white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid $white;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $white;
+      color: $primary-brown;
     }
+  }
+
+  // Content Section
+  &__content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   &__name {
@@ -222,5 +310,15 @@ $white: #FFFFFF;
     flex-wrap: wrap;
     gap: 0.25rem;
     margin-top: auto;
+  }
+}
+
+// Screenshot shine animation
+@keyframes screenshot-shine {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  50%, 100% {
+    transform: translateX(100%) rotate(45deg);
   }
 }

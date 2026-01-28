@@ -30,19 +30,26 @@
     <div class="projects" role="list" aria-live="polite">
       @for (project of filteredProjects; track project.name; let i = $index) {
         <article class="project card" role="listitem" appScrollReveal [delay]="i * 100">
-          <div class="project__icon">
-            <i class="fas fa-folder-open" aria-hidden="true"></i>
+          <div class="project__screenshot">
+            <div class="project__screenshot-placeholder" [attr.data-icon]="project.icon || 'fas fa-folder-open'">
+              <i [class]="project.icon || 'fas fa-folder-open'" aria-hidden="true"></i>
+            </div>
+            <div class="project__screenshot-overlay">
+              <span class="project__screenshot-label">View Project</span>
+            </div>
           </div>
-          <h3 class="project__name">{{ project.name }}</h3>
-          <p class="project__company">
-            <i class="fas fa-building" aria-hidden="true"></i>
-            {{ project.company }}
-          </p>
-          <p class="project__description">{{ project.description }}</p>
-          <div class="project__technologies" aria-label="Technologies used">
-            @for (tech of project.technologies; track tech) {
-              <span class="tag">{{ tech }}</span>
-            }
+          <div class="project__content">
+            <h3 class="project__name">{{ project.name }}</h3>
+            <p class="project__company">
+              <i class="fas fa-building" aria-hidden="true"></i>
+              {{ project.company }}
+            </p>
+            <p class="project__description">{{ project.description }}</p>
+            <div class="project__technologies" aria-label="Technologies used">
+              @for (tech of project.technologies; track tech) {
+                <span class="tag">{{ tech }}</span>
+              }
+            </div>
           </div>
         </article>
       }
