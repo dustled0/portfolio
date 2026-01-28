@@ -121,3 +121,86 @@ npm install          # Install dependencies
 npm run build        # Production build with PWA
 npm start            # Development server
 ```
+
+---
+
+## Future Improvements (Not Yet Implemented)
+
+### Visual & Aesthetic Enhancements
+
+- [ ] **Animated background particles/gradient mesh** - Add dynamic background to hero section
+- [ ] **Professional photo/avatar** - Include profile image in hero or about section
+- [ ] **Project screenshots/thumbnails** - Visual previews for each portfolio project
+- [ ] **Video demos/GIFs** - Animated demonstrations of projects in action
+- [ ] **Glassmorphism card effects** - Modern frosted glass styling on cards
+- [ ] **Custom cursor effects** - Interactive cursor on hover states
+- [ ] **Animated skill icons** - Icon animations beyond static bars
+
+### Interactive Features
+
+- [ ] **Interactive resume timeline** - Clickable nodes with expanding details
+- [ ] **Live code playground** - Embedded CodePen/StackBlitz demos
+- [ ] **Chat widget integration** - Quick contact via chat (Crisp, Tawk.to)
+- [ ] **Calendly booking integration** - Allow clients to schedule calls directly
+- [ ] **Project detail modals** - Expanded view with more project information
+
+### Client-Focused Additions
+
+- [ ] **Case studies section** - Detailed Problem → Solution → Results breakdowns
+- [ ] **Services/offerings section** - Clear list of services with descriptions
+- [ ] **Client logos carousel** - "Worked with..." section showing past clients
+- [ ] **Availability status indicator** - "Currently available for freelance" badge
+- [ ] **Pricing tiers** - Optional service pricing display
+
+### Social Proof & Credibility
+
+- [ ] **GitHub stats integration** - Display repo stars, contributions
+- [ ] **LinkedIn recommendations** - Pull in professional endorsements
+- [ ] **Featured project badges** - Highlight top/best projects
+- [ ] **Resume download counter** - Show engagement metrics
+- [ ] **Lighthouse score badge** - Display performance scores
+
+### Content Enhancements
+
+- [ ] **More blog posts** - Technical tutorials and insights
+- [ ] **Code snippets in blog** - Syntax-highlighted examples
+- [ ] **Project metrics** - Performance improvements, user growth stats
+- [ ] **Tech stack visualization** - Interactive technology chart
+
+### Technical Improvements
+
+- [ ] **Page transition animations** - Smooth transitions between sections
+- [ ] **3D elements with Three.js** - Interactive 3D graphics
+- [ ] **Mouse-follow effects** - Elements that respond to cursor position
+- [ ] **Sound effects** - Optional subtle interaction sounds
+- [ ] **Easter eggs** - Hidden features for engagement (Konami code, etc.)
+
+---
+
+## Priority Matrix
+
+| Feature | Client Impact | Implementation Effort |
+|---------|--------------|----------------------|
+| Project screenshots | High | Low |
+| Availability badge | High | Low |
+| Client logos section | High | Low |
+| Glassmorphism cards | Medium | Low |
+| Calendly integration | High | Low |
+| Case study (1 project) | High | Medium |
+| GitHub stats | Medium | Medium |
+| Interactive timeline | Medium | Medium |
+| Live code playground | High | High |
+| 3D elements | Low | High |
+
+---
+
+## Quick Wins Checklist
+
+These can be implemented quickly for maximum impact:
+
+- [ ] Add project screenshots to `resume-data.ts`
+- [ ] Create availability badge component
+- [ ] Add client/company logos section
+- [ ] Implement glassmorphism CSS on existing cards
+- [ ] Add Calendly button to contact section
+- [ ] Write one detailed case study
