@@ -30,12 +30,37 @@
     <div class="projects" role="list" aria-live="polite">
       @for (project of filteredProjects; track project.name; let i = $index) {
         <article class="project card" role="listitem" appScrollReveal [delay]="i * 100">
-          <div class="project__screenshot">
-            <div class="project__screenshot-placeholder" [attr.data-icon]="project.icon || 'fas fa-folder-open'">
+          <div class="project__screenshot" 
+               (mouseenter)="playVideo($event)" 
+               (mouseleave)="pauseVideo($event)">
+            @if (project.videoDemo) {
+              <video class="project__video" 
+                     [src]="project.videoDemo" 
+                     muted 
+                     loop 
+                     playsinline
+                     preload="metadata"
+                     aria-label="Project demo video">
+              </video>
+            } @else if (project.gifDemo) {
+              <img class="project__gif" 
+                   [src]="project.gifDemo" 
+                   [alt]="project.name + ' demo'"
+                   loading="lazy">
+            }
+            <div class="project__screenshot-placeholder" 
+                 [class.project__screenshot-placeholder--hidden]="project.videoDemo || project.gifDemo"
+                 [attr.data-icon]="project.icon || 'fas fa-folder-open'">
               <i [class]="project.icon || 'fas fa-folder-open'" aria-hidden="true"></i>
             </div>
             <div class="project__screenshot-overlay">
-              <span class="project__screenshot-label">View Project</span>
+              <span class="project__screenshot-label">
+                @if (project.videoDemo || project.gifDemo) {
+                  <i class="fas fa-play" aria-hidden="true"></i> Watch Demo
+                } @else {
+                  View Project
+                }
+              </span>
             </div>
           </div>
           <div class="project__content">

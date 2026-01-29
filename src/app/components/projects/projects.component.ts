@@ -48,4 +48,23 @@ export class ProjectsComponent {
   setFilter(tech: string): void {
     this.activeFilter = tech;
   }
+
+  playVideo(event: MouseEvent): void {
+    const container = event.currentTarget as HTMLElement;
+    const video = container.querySelector('video');
+    if (video) {
+      video.play().catch(() => {
+        // Autoplay may be blocked, ignore error
+      });
+    }
+  }
+
+  pauseVideo(event: MouseEvent): void {
+    const container = event.currentTarget as HTMLElement;
+    const video = container.querySelector('video');
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  }
 }

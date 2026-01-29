@@ -21,6 +21,8 @@ export interface Project {
   link?: string;
   screenshot?: string;
   icon?: string;
+  videoDemo?: string;  // URL to video demo (mp4, webm)
+  gifDemo?: string;    // URL to animated GIF preview
 }
 
 export interface Education {

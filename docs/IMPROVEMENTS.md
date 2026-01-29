@@ -140,7 +140,7 @@ npm start            # Development server
 - [x] **Animated background particles/gradient mesh** - Floating particles and animated gradient mesh in hero and contact sections
 - [x] **Professional photo/avatar** - Profile image in hero section with animated gradient border
 - [x] **Project screenshots/thumbnails** - Visual card thumbnails with gradient placeholders and icon overlays; ready for real screenshots
-- [ ] **Video demos/GIFs** - Animated demonstrations of projects in action
+- [x] **Video demos/GIFs** - Added support for video/GIF demos on project cards (plays on hover)
 - [x] **Glassmorphism card effects** - Modern frosted glass styling on skills, projects, and contact cards
 - [x] **Custom cursor effects** - Interactive ring + dot cursor with hover states on interactive elements
 - [x] **Animated skill icons** - Pulsing gradient icons, shimmer effect on progress bars, enhanced hover states
