@@ -18,6 +18,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
 import { CustomCursorDirective } from './directives/custom-cursor.directive';
 import { ChatWidgetService } from './services/chat-widget.service';
+import { EasterEggsService } from './services/easter-eggs.service';
 
 @Component({
   selector: 'app-root',
@@ -48,7 +49,10 @@ import { ChatWidgetService } from './services/chat-widget.service';
 export class AppComponent implements OnInit {
   title = 'Dustine Lee A. Dequito - Portfolio';
 
-  constructor(private chatWidgetService: ChatWidgetService) {}
+  constructor(
+    private chatWidgetService: ChatWidgetService,
+    private easterEggsService: EasterEggsService
+  ) {}
 
   ngOnInit(): void {
     this.chatWidgetService.init();

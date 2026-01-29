@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RESUME_DATA, Project } from '../../data/resume-data';
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
+import { MouseFollowDirective } from '../../directives/mouse-follow.directive';
 import { ProjectModalComponent } from '../project-modal/project-modal.component';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, FormsModule, ScrollRevealDirective, ProjectModalComponent],
+  imports: [CommonModule, FormsModule, ScrollRevealDirective, MouseFollowDirective, ProjectModalComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
