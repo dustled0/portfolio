@@ -9,22 +9,28 @@
         I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
       </p>
 
-      <!-- Schedule a Call CTA -->
-      @if (personalInfo.calendlyUrl) {
-        <div class="contact__schedule" appScrollReveal [delay]="150">
+      <!-- Quick Actions -->
+      <div class="contact__quick-actions" appScrollReveal [delay]="150">
+        @if (personalInfo.calendlyUrl) {
           <a
             [href]="personalInfo.calendlyUrl"
             target="_blank"
             rel="noopener noreferrer"
-            class="contact__schedule-btn"
+            class="contact__action-btn contact__action-btn--schedule"
             aria-label="Schedule a call via Calendly">
             <i class="fas fa-calendar-alt" aria-hidden="true"></i>
             <span>Schedule a Call</span>
-            <i class="fas fa-external-link-alt contact__schedule-external" aria-hidden="true"></i>
           </a>
-          <p class="contact__schedule-text">Book a free 30-minute consultation</p>
-        </div>
-      }
+        }
+        <a
+          href="assets/dustine.l.a.dequito.pdf"
+          download="Dustine_Dequito_Resume.pdf"
+          class="contact__action-btn contact__action-btn--resume"
+          aria-label="Download resume as PDF">
+          <i class="fas fa-download" aria-hidden="true"></i>
+          <span>Download Resume</span>
+        </a>
+      </div>
 
       <div class="contact__cards" role="list" aria-label="Contact information">
         <a href="mailto:{{ personalInfo.email }}" class="contact__card card" role="listitem" [attr.aria-label]="'Email me at ' + personalInfo.email" appScrollReveal [delay]="200">

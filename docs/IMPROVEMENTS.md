@@ -213,3 +213,4 @@ These can be implemented quickly for maximum impact:
 - [x] Implement glassmorphism CSS on existing cards
 - [x] Add Calendly button to contact section
 - [ ] Write one detailed case study
+- [x] **Prominent resume download buttons** - Golden gradient buttons in Hero and Contact sections

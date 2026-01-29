@@ -261,6 +261,27 @@ $white: #FFFFFF;
           color: $primary-brown;
         }
       }
+
+      &--resume {
+        background: linear-gradient(135deg, #FFD700, #FFA500);
+        color: #333;
+        border: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+
+        i {
+          font-size: 0.9rem;
+        }
+
+        &:hover {
+          background: linear-gradient(135deg, #FFA500, #FF8C00);
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+        }
+      }
     }
   }
 
