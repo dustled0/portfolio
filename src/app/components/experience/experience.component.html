@@ -1,12 +1,28 @@
 <section id="experience" class="section section--alt" aria-labelledby="experience-title">
   <div class="container">
     <h2 id="experience-title" class="section__title" appScrollReveal>Work Experience</h2>
+    <p class="section__subtitle" appScrollReveal [delay]="50">Click on any position to see details</p>
 
     <div class="timeline" role="list" aria-label="Work experience timeline">
       @for (exp of experiences; track exp.company; let i = $index; let isOdd = $odd) {
-        <article class="timeline__item" role="listitem" [class.timeline__item--right]="isOdd" appScrollReveal [animation]="isOdd ? 'fade-right' : 'fade-left'" [delay]="i * 150">
-          <div class="timeline__dot" aria-hidden="true"></div>
-          <div class="timeline__content">
+        <article 
+          class="timeline__item" 
+          role="listitem" 
+          [class.timeline__item--right]="isOdd" 
+          [class.timeline__item--expanded]="isExpanded(i)"
+          appScrollReveal 
+          [animation]="isOdd ? 'fade-right' : 'fade-left'" 
+          [delay]="i * 150">
+          
+          <button 
+            class="timeline__dot" 
+            (click)="toggleExpand(i)"
+            [attr.aria-expanded]="isExpanded(i)"
+            [attr.aria-label]="'Toggle details for ' + exp.position + ' at ' + exp.company">
+            <i class="fas" [class.fa-plus]="!isExpanded(i)" [class.fa-minus]="isExpanded(i)" aria-hidden="true"></i>
+          </button>
+          
+          <div class="timeline__content" (click)="toggleExpand(i)">
             <div class="timeline__header">
               <h3 class="timeline__position">{{ exp.position }}</h3>
               <span class="timeline__company">
@@ -26,11 +42,19 @@
                 {{ exp.location }}
               </span>
             </div>
-            <ul class="timeline__responsibilities" aria-label="Key responsibilities">
-              @for (resp of exp.responsibilities; track resp) {
-                <li>{{ resp }}</li>
-              }
-            </ul>
+            
+            <div class="timeline__details" [class.timeline__details--visible]="isExpanded(i)">
+              <ul class="timeline__responsibilities" aria-label="Key responsibilities">
+                @for (resp of exp.responsibilities; track resp) {
+                  <li>{{ resp }}</li>
+                }
+              </ul>
+            </div>
+            
+            <button class="timeline__toggle" (click)="toggleExpand(i); $event.stopPropagation()">
+              <span>{{ isExpanded(i) ? 'Show less' : 'Show details' }}</span>
+              <i class="fas" [class.fa-chevron-up]="isExpanded(i)" [class.fa-chevron-down]="!isExpanded(i)" aria-hidden="true"></i>
+            </button>
           </div>
         </article>
       }

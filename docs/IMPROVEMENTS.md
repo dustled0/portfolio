@@ -147,7 +147,7 @@ npm start            # Development server
 
 ### Interactive Features
 
-- [ ] **Interactive resume timeline** - Clickable nodes with expanding details
+- [x] **Interactive resume timeline** - Clickable nodes with expanding details, animated transitions
 - [ ] **Live code playground** - Embedded CodePen/StackBlitz demos
 - [ ] **Chat widget integration** - Quick contact via chat (Crisp, Tawk.to)
 - [x] **Calendly booking integration** - "Schedule a Call" button in contact section with configurable URL

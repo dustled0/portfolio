@@ -12,4 +12,13 @@ import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive'
 })
 export class ExperienceComponent {
   experiences = RESUME_DATA.experience;
+  expandedIndex: number | null = null;
+
+  toggleExpand(index: number): void {
+    this.expandedIndex = this.expandedIndex === index ? null : index;
+  }
+
+  isExpanded(index: number): boolean {
+    return this.expandedIndex === index;
+  }
 }
