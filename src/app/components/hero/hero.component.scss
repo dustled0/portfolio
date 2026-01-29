@@ -85,12 +85,12 @@ $white: #FFFFFF;
   }
 
   &__avatar {
-    width: 160px;
-    height: 160px;
+    width: 200px;
+    height: 200px;
     margin: 0 auto 2rem;
     border-radius: 50%;
     position: relative;
-    padding: 5px;
+    padding: 6px;
     background: linear-gradient(135deg, rgba($white, 0.8), rgba($accent-tan, 0.6));
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
                 0 0 0 4px rgba($white, 0.2);
@@ -99,10 +99,10 @@ $white: #FFFFFF;
     &::before {
       content: '';
       position: absolute;
-      top: -3px;
-      left: -3px;
-      right: -3px;
-      bottom: -3px;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
       border-radius: 50%;
       background: linear-gradient(135deg, $accent-tan, $accent-orange, $primary-brown-light);
       z-index: -1;
@@ -110,8 +110,9 @@ $white: #FFFFFF;
     }
 
     @media (min-width: 768px) {
-      width: 180px;
-      height: 180px;
+      width: 250px;
+      height: 250px;
+      padding: 8px;
     }
   }
 
