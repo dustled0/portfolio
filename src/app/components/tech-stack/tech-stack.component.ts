@@ -29,7 +29,7 @@ export class TechStackComponent implements OnInit, AfterViewInit {
     frontend: '#61DAFB',
     backend: '#68A063',
     tools: '#F7DF1E',
-    other: '#8D6E63'
+    other: '#4299E1'
   };
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
@@ -60,7 +60,7 @@ export class TechStackComponent implements OnInit, AfterViewInit {
         x: 200 + radius * Math.cos(angle),
         y: 200 + radius * Math.sin(angle),
         size: 30 + skill.level / 3,
-        color: this.colors[skill.category] || '#8D6E63'
+        color: this.colors[skill.category] || '#4299E1'
       };
     });
   }
