@@ -148,10 +148,10 @@ npm start            # Development server
 ### Interactive Features
 
 - [x] **Interactive resume timeline** - Clickable nodes with expanding details, animated transitions
-- [ ] **Live code playground** - Embedded CodePen/StackBlitz demos
-- [ ] **Chat widget integration** - Quick contact via chat (Crisp, Tawk.to)
+- [x] **Live code playground** - Reusable component for CodePen/StackBlitz/CodeSandbox embeds
+- [x] **Chat widget integration** - Service for Crisp/Tawk.to (configure in resume-data.ts)
 - [x] **Calendly booking integration** - "Schedule a Call" button in contact section with configurable URL
-- [ ] **Project detail modals** - Expanded view with more project information
+- [x] **Project detail modals** - Click project cards to see full details, videos, and code playgrounds
 
 ### Client-Focused Additions
 

@@ -1,0 +1,169 @@
+$primary-brown: #5D4037;
+$primary-brown-light: #795548;
+$accent-tan: #D7CCC8;
+$cream: #EFEBE9;
+$text-dark: #3E2723;
+$accent-orange: #8D6E63;
+$white: #FFFFFF;
+
+.playground {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card-bg, $white);
+  box-shadow: 0 4px 20px var(--shadow-color, rgba(0, 0, 0, 0.1));
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 30px var(--shadow-color, rgba(0, 0, 0, 0.15));
+  }
+
+  &__trigger {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-brown, $primary-brown) 0%, var(--primary-brown-light, $primary-brown-light) 100%);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(135deg, var(--primary-brown-light, $primary-brown-light) 0%, var(--accent-orange, $accent-orange) 100%);
+
+      .playground__icon {
+        transform: scale(1.1);
+      }
+
+      .playground__badge {
+        transform: scale(1.2);
+        background-color: rgba($white, 0.3);
+      }
+    }
+  }
+
+  &__icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($white, 0.15);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+
+    i {
+      font-size: 2.5rem;
+      color: $white;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $white;
+  }
+
+  &__subtitle {
+    font-size: 0.9rem;
+    color: rgba($white, 0.8);
+  }
+
+  &__badge {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($white, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 1.25rem;
+      color: $white;
+      margin-left: 3px; // Visual centering for play icon
+    }
+  }
+
+  &__embed {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &--loaded iframe {
+      opacity: 1;
+    }
+  }
+
+  &__loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, var(--primary-brown, $primary-brown) 0%, var(--primary-brown-light, $primary-brown-light) 100%);
+    color: $white;
+    font-size: 1rem;
+  }
+
+  &__spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba($white, 0.3);
+    border-top-color: $white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 600px) {
+  .playground {
+    &__trigger {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    &__info {
+      align-items: center;
+    }
+
+    &__icon {
+      width: 60px;
+      height: 60px;
+
+      i {
+        font-size: 1.75rem;
+      }
+    }
+  }
+}

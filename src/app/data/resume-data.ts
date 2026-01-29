@@ -23,6 +23,11 @@ export interface Project {
   icon?: string;
   videoDemo?: string;  // URL to video demo (mp4, webm)
   gifDemo?: string;    // URL to animated GIF preview
+  playground?: {       // Live code playground embed
+    type: 'codepen' | 'stackblitz' | 'codesandbox';
+    embedId: string;
+    defaultTab?: string;
+  };
 }
 
 export interface Education {
@@ -73,6 +78,13 @@ export interface Client {
   url?: string;
 }
 
+export interface ChatWidgetConfig {
+  enabled: boolean;
+  provider: 'crisp' | 'tawkto';
+  siteId: string;  // Crisp website ID or Tawk.to property ID
+  widgetId?: string;  // Only for Tawk.to
+}
+
 export interface ResumeData {
   personalInfo: {
     name: string;
@@ -84,6 +96,7 @@ export interface ResumeData {
     availableForWork: boolean;
     availabilityStatus?: string;
     calendlyUrl?: string;
+    chatWidget?: ChatWidgetConfig;
   };
   profile: string;
   skills: Skill[];

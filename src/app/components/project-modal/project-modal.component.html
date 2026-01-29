@@ -1,0 +1,81 @@
+@if (isOpen && project) {
+  <div class="modal" (click)="onBackdropClick($event)" role="dialog" aria-modal="true" [attr.aria-label]="project.name + ' details'">
+    <div class="modal__content">
+      <button class="modal__close" (click)="close()" aria-label="Close modal">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+
+      <div class="modal__header">
+        <div class="modal__icon">
+          <i [class]="project.icon || 'fas fa-folder-open'" aria-hidden="true"></i>
+        </div>
+        <div class="modal__title-wrapper">
+          <h2 class="modal__title">{{ project.name }}</h2>
+          <span class="modal__company">
+            <i class="fas fa-building" aria-hidden="true"></i>
+            {{ project.company }}
+          </span>
+        </div>
+      </div>
+
+      <div class="modal__body">
+        <div class="modal__section">
+          <h3 class="modal__section-title">Description</h3>
+          <p class="modal__description">{{ project.description }}</p>
+        </div>
+
+        <div class="modal__section">
+          <h3 class="modal__section-title">Technologies</h3>
+          <div class="modal__technologies">
+            @for (tech of project.technologies; track tech) {
+              <span class="tag tag--large">{{ tech }}</span>
+            }
+          </div>
+        </div>
+
+        @if (project.videoDemo || project.gifDemo) {
+          <div class="modal__section">
+            <h3 class="modal__section-title">Demo</h3>
+            <div class="modal__media">
+              @if (project.videoDemo) {
+                <video 
+                  [src]="project.videoDemo" 
+                  controls 
+                  autoplay 
+                  muted 
+                  loop
+                  class="modal__video">
+                </video>
+              } @else if (project.gifDemo) {
+                <img [src]="project.gifDemo" [alt]="project.name + ' demo'" class="modal__gif">
+              }
+            </div>
+          </div>
+        }
+
+        @if (project.playground) {
+          <div class="modal__section">
+            <h3 class="modal__section-title">Live Code</h3>
+            <app-code-playground
+              [type]="project.playground.type"
+              [embedId]="project.playground.embedId"
+              [title]="project.name + ' Demo'"
+              [defaultTab]="project.playground.defaultTab || 'result'"
+              height="350px">
+            </app-code-playground>
+          </div>
+        }
+      </div>
+
+      <div class="modal__footer">
+        @if (project.link) {
+          <a [href]="project.link" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+            View Project
+          </a>
+        }
+        <button class="btn btn--outline" (click)="close()">Close</button>
+      </div>
+    </div>
+  </div>
+}

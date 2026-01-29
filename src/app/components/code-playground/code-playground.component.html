@@ -1,0 +1,35 @@
+<div class="playground" [style.height]="height">
+  @if (!showEmbed) {
+    <button class="playground__trigger" (click)="loadEmbed()" [attr.aria-label]="'Load ' + title + ' demo'">
+      <div class="playground__icon">
+        <i [class]="iconClass" aria-hidden="true"></i>
+      </div>
+      <div class="playground__info">
+        <span class="playground__title">{{ title }}</span>
+        <span class="playground__subtitle">Click to load interactive demo</span>
+      </div>
+      <div class="playground__badge">
+        <i class="fas fa-play" aria-hidden="true"></i>
+      </div>
+    </button>
+  } @else {
+    <div class="playground__embed" [class.playground__embed--loaded]="isLoaded">
+      @if (!isLoaded) {
+        <div class="playground__loader">
+          <div class="playground__spinner"></div>
+          <span>Loading {{ type }} demo...</span>
+        </div>
+      }
+      <iframe 
+        [src]="embedUrl"
+        [title]="title"
+        (load)="onIframeLoad()"
+        frameborder="0"
+        loading="lazy"
+        allowtransparency="true"
+        allowfullscreen="true"
+        sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts">
+      </iframe>
+    </div>
+  }
+</div>

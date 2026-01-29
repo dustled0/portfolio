@@ -29,7 +29,7 @@
 
     <div class="projects" role="list" aria-live="polite">
       @for (project of filteredProjects; track project.name; let i = $index) {
-        <article class="project card" role="listitem" appScrollReveal [delay]="i * 100">
+        <article class="project card" role="listitem" appScrollReveal [delay]="i * 100" (click)="openProjectModal(project)">
           <div class="project__screenshot" 
                (mouseenter)="playVideo($event)" 
                (mouseleave)="pauseVideo($event)">
@@ -91,3 +91,9 @@
     }
   </div>
 </section>
+
+<app-project-modal
+  [project]="selectedProject"
+  [isOpen]="isModalOpen"
+  (closeModal)="closeProjectModal()">
+</app-project-modal>
