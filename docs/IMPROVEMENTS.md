@@ -37,7 +37,7 @@ This document outlines potential improvements for the portfolio website, organiz
 ## Performance
 
 - [x] **Lazy loading for images** - Added `loading="lazy"` support
-- [ ] **Image optimization (WebP format)** - Convert images to modern formats (manual task)
+- [x] **Image optimization (WebP format)** - Converted profile-pic.png (1.5MB → 38KB, 97% reduction)
 - [x] **Service worker for offline support (PWA)** - Full PWA support with manifest and ngsw-config
 - [x] **Preload critical assets** - Preconnect to Google Fonts, preload hints
 

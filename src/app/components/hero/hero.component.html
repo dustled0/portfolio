@@ -16,7 +16,10 @@
   </div>
   <div class="hero__content">
     <div class="hero__avatar">
-      <img src="assets/profile-pic.png" alt="Dustine Lee A. Dequito" class="hero__avatar-img">
+      <picture>
+        <source srcset="assets/profile-pic.webp" type="image/webp">
+        <img src="assets/profile-pic.png" alt="Dustine Lee A. Dequito" class="hero__avatar-img" loading="eager">
+      </picture>
       @if (personalInfo.availableForWork) {
         <div class="hero__availability-indicator" title="Available for work"></div>
       }
