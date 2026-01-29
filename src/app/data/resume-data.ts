@@ -29,6 +29,11 @@ export interface Project {
     defaultTab?: string;
   };
   featured?: boolean;  // Show featured badge
+  metrics?: {          // Project performance metrics
+    label: string;
+    value: string;
+    icon?: string;
+  }[];
 }
 
 export interface Education {
@@ -63,6 +68,11 @@ export interface BlogPost {
   url: string;
   image?: string;
   tags: string[];
+  readingTime?: string;
+  codeSnippet?: {
+    language: string;
+    code: string;
+  };
 }
 
 export interface Statistic {
@@ -335,21 +345,71 @@ export const RESUME_DATA: ResumeData = {
       excerpt: 'Learn the essential patterns and practices for building enterprise-grade Angular applications that scale.',
       date: 'Dec 2024',
       url: '#',
-      tags: ['Angular', 'Architecture', 'Best Practices']
+      tags: ['Angular', 'Architecture', 'Best Practices'],
+      readingTime: '8 min read',
+      codeSnippet: {
+        language: 'typescript',
+        code: `@Component({
+  selector: 'app-lazy-module',
+  standalone: true,
+  imports: [CommonModule]
+})
+export class LazyComponent {}`
+      }
     },
     {
       title: 'Modern CSS Techniques Every Developer Should Know',
       excerpt: 'Explore modern CSS features like Grid, Container Queries, and CSS Variables that will level up your styling game.',
       date: 'Nov 2024',
       url: '#',
-      tags: ['CSS', 'Frontend', 'Web Design']
+      tags: ['CSS', 'Frontend', 'Web Design'],
+      readingTime: '6 min read',
+      codeSnippet: {
+        language: 'css',
+        code: `.container {
+  display: grid;
+  grid-template-columns: 
+    repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}`
+      }
     },
     {
       title: 'Introduction to DAML for Blockchain Development',
       excerpt: 'A beginner-friendly guide to DAML and how it simplifies building blockchain-based applications.',
       date: 'Oct 2024',
       url: '#',
-      tags: ['DAML', 'Blockchain', 'Smart Contracts']
+      tags: ['DAML', 'Blockchain', 'Smart Contracts'],
+      readingTime: '10 min read'
+    },
+    {
+      title: 'React vs Angular: Choosing the Right Framework in 2024',
+      excerpt: 'An in-depth comparison of React and Angular to help you make the best choice for your next project.',
+      date: 'Sep 2024',
+      url: '#',
+      tags: ['React', 'Angular', 'Comparison'],
+      readingTime: '12 min read'
+    },
+    {
+      title: 'Optimizing Web Performance: A Practical Guide',
+      excerpt: 'Discover techniques to improve your website\'s performance scores and provide a better user experience.',
+      date: 'Aug 2024',
+      url: '#',
+      tags: ['Performance', 'Optimization', 'Core Web Vitals'],
+      readingTime: '7 min read',
+      codeSnippet: {
+        language: 'javascript',
+        code: `// Lazy load images
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.src = entry.target.dataset.src;
+      }
+    });
+  }
+);`
+      }
     }
   ],
   statistics: [

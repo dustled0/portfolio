@@ -1,0 +1,55 @@
+<section id="tech-stack" class="section" aria-labelledby="tech-stack-title">
+  <div class="container">
+    <h2 id="tech-stack-title" class="section__title" appScrollReveal>Tech Stack</h2>
+    <p class="section__subtitle" appScrollReveal [delay]="50">Technologies I work with</p>
+
+    <div class="tech-stack__filters" appScrollReveal [delay]="100">
+      @for (cat of categories; track cat) {
+        <button 
+          class="tech-stack__filter"
+          [class.tech-stack__filter--active]="selectedCategory === cat"
+          (click)="filterByCategory(cat)">
+          {{ cat === 'all' ? 'All' : cat | titlecase }}
+        </button>
+      }
+    </div>
+
+    <div class="tech-stack__visualization" appScrollReveal [delay]="150">
+      <div class="tech-stack__grid">
+        @for (skill of filteredSkills; track skill.name; let i = $index) {
+          <div 
+            class="tech-stack__item" 
+            [style.--delay]="i * 50 + 'ms'"
+            [attr.data-category]="skill.category">
+            <div class="tech-stack__bubble" [style.--level]="skill.level + '%'">
+              <span class="tech-stack__name">{{ skill.name }}</span>
+              <span class="tech-stack__level">{{ skill.level }}%</span>
+            </div>
+            <div class="tech-stack__bar">
+              <div class="tech-stack__bar-fill" [style.width.%]="skill.level"></div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="tech-stack__legend" appScrollReveal [delay]="200">
+      <div class="tech-stack__legend-item">
+        <span class="tech-stack__legend-dot tech-stack__legend-dot--frontend"></span>
+        <span>Frontend</span>
+      </div>
+      <div class="tech-stack__legend-item">
+        <span class="tech-stack__legend-dot tech-stack__legend-dot--backend"></span>
+        <span>Backend</span>
+      </div>
+      <div class="tech-stack__legend-item">
+        <span class="tech-stack__legend-dot tech-stack__legend-dot--tools"></span>
+        <span>Tools</span>
+      </div>
+      <div class="tech-stack__legend-item">
+        <span class="tech-stack__legend-dot tech-stack__legend-dot--other"></span>
+        <span>Other</span>
+      </div>
+    </div>
+  </div>
+</section>

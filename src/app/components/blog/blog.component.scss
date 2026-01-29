@@ -119,6 +119,54 @@ $white: #FFFFFF;
   }
 }
 
+// Reading time
+.blog-post__reading-time {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--accent-orange, $accent-orange);
+
+  i {
+    font-size: 0.75rem;
+  }
+}
+
+// Code snippet
+.blog-post__code {
+  margin: 1rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1e1e1e;
+  font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+
+  &-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+    background: #2d2d2d;
+  }
+
+  &-lang {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 0.5px;
+  }
+
+  pre {
+    margin: 0;
+    padding: 1rem;
+    overflow-x: auto;
+    font-size: 0.8rem;
+    line-height: 1.5;
+
+    code {
+      color: #d4d4d4;
+    }
+  }
+}
+
 // Hover effect for entire card
 .blog-post:hover {
   .blog-post__image {

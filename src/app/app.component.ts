@@ -5,6 +5,7 @@ import { AboutComponent } from './components/about/about.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { ClientLogosComponent } from './components/client-logos/client-logos.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { TechStackComponent } from './components/tech-stack/tech-stack.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { CaseStudiesComponent } from './components/case-studies/case-studies.component';
@@ -28,6 +29,7 @@ import { ChatWidgetService } from './services/chat-widget.service';
     StatisticsComponent,
     ClientLogosComponent,
     SkillsComponent,
+    TechStackComponent,
     ExperienceComponent,
     ProjectsComponent,
     CaseStudiesComponent,
