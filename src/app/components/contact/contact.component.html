@@ -155,6 +155,32 @@
 
   <footer class="footer" role="contentinfo">
     <div class="container">
+      <!-- Social Links -->
+      @if (personalInfo.socialLinks) {
+        <div class="footer__social">
+          @if (personalInfo.socialLinks.github) {
+            <a [href]="personalInfo.socialLinks.github" target="_blank" rel="noopener noreferrer" 
+               class="footer__social-link" aria-label="GitHub Profile">
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+          }
+          @if (personalInfo.socialLinks.linkedin) {
+            <a [href]="personalInfo.socialLinks.linkedin" target="_blank" rel="noopener noreferrer" 
+               class="footer__social-link" aria-label="LinkedIn Profile">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+          }
+        </div>
+      }
+
+      <!-- Recent Activity Indicator -->
+      @if (lastActivityText) {
+        <p class="footer__activity">
+          <i class="fas fa-bolt" aria-hidden="true"></i>
+          Last project completed: <strong>{{ lastActivityText }}</strong>
+        </p>
+      }
+
       <p class="footer__text">
         &copy; {{ currentYear }} {{ personalInfo.name }}. All rights reserved.
       </p>

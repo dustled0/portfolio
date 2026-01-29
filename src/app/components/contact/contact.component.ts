@@ -19,6 +19,18 @@ export class ContactComponent {
   formStatus: 'idle' | 'submitting' | 'success' | 'error' = 'idle';
   errorMessage = '';
 
+  get lastActivityText(): string {
+    if (!this.personalInfo.lastProjectDate) return '';
+    const lastDate = new Date(this.personalInfo.lastProjectDate);
+    const now = new Date();
+    const diffDays = Math.floor((now.getTime() - lastDate.getTime()) / (1000 * 60 * 60 * 24));
+    
+    if (diffDays < 7) return 'This week';
+    if (diffDays < 30) return `${Math.floor(diffDays / 7)} week${Math.floor(diffDays / 7) > 1 ? 's' : ''} ago`;
+    if (diffDays < 60) return 'Last month';
+    return lastDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+  }
+
   // Replace with your Formspree endpoint URL
   private formspreeEndpoint = 'https://formspree.io/f/xbdonrwv';
 

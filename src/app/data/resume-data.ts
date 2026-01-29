@@ -130,6 +130,19 @@ export interface ChatWidgetConfig {
   widgetId?: string;  // Only for Tawk.to
 }
 
+export interface SocialLinks {
+  github?: string;
+  linkedin?: string;
+  twitter?: string;
+  website?: string;
+}
+
+export interface TrustBadge {
+  label: string;
+  icon: string;
+  tooltip?: string;
+}
+
 export interface ResumeData {
   personalInfo: {
     name: string;
@@ -142,6 +155,9 @@ export interface ResumeData {
     availabilityStatus?: string;
     calendlyUrl?: string;
     chatWidget?: ChatWidgetConfig;
+    socialLinks?: SocialLinks;
+    trustBadges?: TrustBadge[];
+    lastProjectDate?: string;  // For "Recent Activity" indicator
   };
   profile: string;
   skills: Skill[];
@@ -167,7 +183,17 @@ export const RESUME_DATA: ResumeData = {
     yearsExperience: 15,
     availableForWork: true,
     availabilityStatus: 'Available for Freelance',
-    calendlyUrl: 'https://calendly.com/dustled0'
+    calendlyUrl: 'https://calendly.com/dustled0',
+    socialLinks: {
+      github: 'https://github.com/dustled0',
+      linkedin: 'https://linkedin.com/in/dustled0',  // UPDATE with your actual LinkedIn URL
+    },
+    trustBadges: [
+      { label: 'NDA Available', icon: 'fas fa-shield-alt', tooltip: 'Happy to sign NDAs for confidential projects' },
+      { label: '100% Job Success', icon: 'fas fa-check-circle', tooltip: 'Proven track record of successful deliveries' },
+      { label: '15+ Years Experience', icon: 'fas fa-award', tooltip: 'Over 15 years in web development' },
+    ],
+    lastProjectDate: '2025-01-15',  // UPDATE with your last completed project date
   },
   profile: `Experienced Web Developer with 15 years of expertise in building dynamic and responsive web applications. Proficient in modern frontend frameworks including Angular and React JS, with strong skills in DAML for blockchain-based applications. Adept at creating user-centric designs using SCSS and Bootstrap, while also leveraging PHP and WordPress for backend development.`,
   skills: [

@@ -52,6 +52,42 @@
       </span>
     </div>
 
+    <!-- Social Links -->
+    @if (personalInfo.socialLinks) {
+      <div class="hero__social-links" role="list" aria-label="Social media links">
+        @if (personalInfo.socialLinks.github) {
+          <a [href]="personalInfo.socialLinks.github" target="_blank" rel="noopener noreferrer" 
+             class="hero__social-link" aria-label="GitHub Profile">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+        }
+        @if (personalInfo.socialLinks.linkedin) {
+          <a [href]="personalInfo.socialLinks.linkedin" target="_blank" rel="noopener noreferrer" 
+             class="hero__social-link" aria-label="LinkedIn Profile">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+          </a>
+        }
+        @if (personalInfo.socialLinks.twitter) {
+          <a [href]="personalInfo.socialLinks.twitter" target="_blank" rel="noopener noreferrer" 
+             class="hero__social-link" aria-label="Twitter Profile">
+            <i class="fab fa-twitter" aria-hidden="true"></i>
+          </a>
+        }
+      </div>
+    }
+
+    <!-- Trust Badges -->
+    @if (personalInfo.trustBadges && personalInfo.trustBadges.length > 0) {
+      <div class="hero__trust-badges" role="list" aria-label="Trust badges">
+        @for (badge of personalInfo.trustBadges; track badge.label) {
+          <div class="hero__trust-badge" [title]="badge.tooltip || badge.label" role="listitem">
+            <i [class]="badge.icon" aria-hidden="true"></i>
+            <span>{{ badge.label }}</span>
+          </div>
+        }
+      </div>
+    }
+
     <div class="hero__actions">
       <a class="btn btn--primary" (click)="scrollTo('contact')" (keydown.enter)="scrollTo('contact')" tabindex="0" role="button">Contact Me</a>
       <a class="btn btn--resume" href="assets/dustine.l.a.dequito.pdf" download="Dustine_Dequito_Resume.pdf" aria-label="Download resume as PDF">

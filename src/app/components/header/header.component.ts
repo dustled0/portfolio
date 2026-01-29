@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit, OnDestroy, Inject, PLATFORM_ID } from 
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ThemeService } from '../../services/theme.service';
 import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
+import { RESUME_DATA } from '../../data/resume-data';
 
 @Component({
   selector: 'app-header',
@@ -15,6 +16,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isMobileMenuOpen = false;
   activeSection = 'hero';
   private observer: IntersectionObserver | null = null;
+  
+  socialLinks = RESUME_DATA.personalInfo.socialLinks;
 
   navLinks = [
     { label: 'About', target: 'about' },

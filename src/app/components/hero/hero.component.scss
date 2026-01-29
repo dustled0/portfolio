@@ -494,3 +494,97 @@ $white: #FFFFFF;
     transform: translateY(0);
   }
 }
+
+// Social Links
+.hero__social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba($white, 0.15);
+  border: 2px solid rgba($white, 0.3);
+  border-radius: 50%;
+  color: $white;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+
+  &:hover {
+    background: $white;
+    color: $primary-brown;
+    border-color: $white;
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: translateY(-2px) scale(1.05);
+  }
+}
+
+// Trust Badges
+.hero__trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero__trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba($white, 0.1);
+  border: 1px solid rgba($white, 0.2);
+  border-radius: 50px;
+  color: $white;
+  font-size: 0.85rem;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+  cursor: default;
+
+  i {
+    color: #22c55e;  // Green for trust
+    font-size: 0.9rem;
+  }
+
+  &:hover {
+    background: rgba($white, 0.2);
+    border-color: rgba($white, 0.4);
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__social-links {
+    gap: 0.75rem;
+  }
+
+  .hero__social-link {
+    width: 42px;
+    height: 42px;
+    font-size: 1.25rem;
+  }
+
+  .hero__trust-badges {
+    gap: 0.5rem;
+  }
+
+  .hero__trust-badge {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}

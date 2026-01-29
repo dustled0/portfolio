@@ -7,6 +7,22 @@
     <div class="header__actions">
       <!-- Language switcher hidden until translations are ready -->
 
+      <!-- Social Links -->
+      @if (socialLinks) {
+        @if (socialLinks.github) {
+          <a [href]="socialLinks.github" target="_blank" rel="noopener noreferrer" 
+             class="header__social-link" aria-label="GitHub Profile">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+        }
+        @if (socialLinks.linkedin) {
+          <a [href]="socialLinks.linkedin" target="_blank" rel="noopener noreferrer" 
+             class="header__social-link" aria-label="LinkedIn Profile">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+          </a>
+        }
+      }
+
       <a
         href="assets/resume.pdf"
         download="Dustine_Dequito_Resume.pdf"
