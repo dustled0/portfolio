@@ -186,7 +186,7 @@ export const RESUME_DATA: ResumeData = {
     calendlyUrl: 'https://calendly.com/dustled0',
     socialLinks: {
       github: 'https://github.com/dustled0',
-      linkedin: 'https://linkedin.com/in/dustled0',  // UPDATE with your actual LinkedIn URL
+      linkedin: 'https://www.linkedin.com/in/dustine-lee-dequito/'
     },
     trustBadges: [
       { label: 'NDA Available', icon: 'fas fa-shield-alt', tooltip: 'Happy to sign NDAs for confidential projects' },
