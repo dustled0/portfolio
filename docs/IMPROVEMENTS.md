@@ -155,11 +155,11 @@ npm start            # Development server
 
 ### Client-Focused Additions
 
-- [ ] **Case studies section** - Detailed Problem → Solution → Results breakdowns
-- [ ] **Services/offerings section** - Clear list of services with descriptions
+- [x] **Case studies section** - Detailed Problem → Solution → Results breakdowns with metrics
+- [x] **Services/offerings section** - Service cards with features, pricing, and CTAs
 - [x] **Client logos carousel** - "Trusted By" grid section with company icons and hover effects
 - [x] **Availability status indicator** - Pulsing green badge in hero section with configurable status text
-- [ ] **Pricing tiers** - Optional service pricing display
+- [x] **Pricing tiers** - Integrated into services section with flexible pricing
 
 ### Social Proof & Credibility
 

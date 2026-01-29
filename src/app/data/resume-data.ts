@@ -78,6 +78,40 @@ export interface Client {
   url?: string;
 }
 
+export interface CaseStudy {
+  title: string;
+  client: string;
+  industry: string;
+  duration: string;
+  problem: string;
+  solution: string;
+  results: string[];
+  technologies: string[];
+  metrics?: {
+    label: string;
+    value: string;
+    improvement?: string;
+  }[];
+  testimonial?: {
+    quote: string;
+    author: string;
+    position: string;
+  };
+  image?: string;
+}
+
+export interface Service {
+  name: string;
+  description: string;
+  icon: string;
+  features: string[];
+  price?: {
+    amount: number;
+    unit: string;  // 'hour', 'project', 'month'
+    note?: string;
+  };
+}
+
 export interface ChatWidgetConfig {
   enabled: boolean;
   provider: 'crisp' | 'tawkto';
@@ -108,6 +142,8 @@ export interface ResumeData {
   blogPosts: BlogPost[];
   statistics: Statistic[];
   clients: Client[];
+  caseStudies: CaseStudy[];
+  services: Service[];
 }
 
 export const RESUME_DATA: ResumeData = {
@@ -356,6 +392,85 @@ export const RESUME_DATA: ResumeData = {
       name: 'Smooth Dezigns',
       icon: 'fas fa-palette',
       url: '#'
+    }
+  ],
+  caseStudies: [
+    {
+      title: 'Enterprise Dashboard Modernization',
+      client: 'Accenture Inc.',
+      industry: 'Technology Consulting',
+      duration: '6 months',
+      problem: 'Legacy dashboard system was slow, difficult to maintain, and lacked modern UX features. Users complained about poor performance and outdated interface.',
+      solution: 'Complete redesign and rebuild using Angular 17 with modern component architecture. Implemented lazy loading, virtual scrolling for large datasets, and a responsive design system.',
+      results: [
+        'Reduced page load time by 60%',
+        'Improved user satisfaction scores by 45%',
+        'Decreased maintenance time by 40%',
+        'Enabled mobile access for 500+ field employees'
+      ],
+      technologies: ['Angular', 'TypeScript', 'SCSS', 'REST APIs', 'Material UI'],
+      metrics: [
+        { label: 'Load Time', value: '1.2s', improvement: '-60%' },
+        { label: 'User Satisfaction', value: '4.5/5', improvement: '+45%' },
+        { label: 'Mobile Users', value: '500+', improvement: 'New' }
+      ],
+      testimonial: {
+        quote: 'The new dashboard transformed how our team works. It\'s faster, more intuitive, and our field staff can finally access it on their phones.',
+        author: 'Project Manager',
+        position: 'Accenture Inc.'
+      }
+    }
+  ],
+  services: [
+    {
+      name: 'Frontend Development',
+      description: 'Modern, responsive web applications built with Angular or React. Focus on performance, accessibility, and maintainable code.',
+      icon: 'fas fa-code',
+      features: [
+        'Single Page Applications (SPA)',
+        'Responsive & Mobile-First Design',
+        'Performance Optimization',
+        'Accessibility (WCAG) Compliance',
+        'Component Libraries & Design Systems'
+      ],
+      price: {
+        amount: 50,
+        unit: 'hour',
+        note: 'Flexible project-based pricing available'
+      }
+    },
+    {
+      name: 'UI/UX Implementation',
+      description: 'Pixel-perfect implementation of designs from Figma, Adobe XD, or Sketch. Bringing your vision to life with clean code.',
+      icon: 'fas fa-paint-brush',
+      features: [
+        'Figma/XD to Code',
+        'Interactive Prototypes',
+        'Animation & Micro-interactions',
+        'Cross-browser Compatibility',
+        'Design System Integration'
+      ],
+      price: {
+        amount: 45,
+        unit: 'hour'
+      }
+    },
+    {
+      name: 'Code Review & Consulting',
+      description: 'Expert review of your frontend codebase. Identify performance issues, security concerns, and improvement opportunities.',
+      icon: 'fas fa-search-plus',
+      features: [
+        'Architecture Review',
+        'Performance Audit',
+        'Security Assessment',
+        'Best Practices Recommendations',
+        'Refactoring Guidance'
+      ],
+      price: {
+        amount: 200,
+        unit: 'project',
+        note: 'Starting price for initial assessment'
+      }
     }
   ]
 };

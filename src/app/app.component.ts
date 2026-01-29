@@ -7,6 +7,8 @@ import { ClientLogosComponent } from './components/client-logos/client-logos.com
 import { SkillsComponent } from './components/skills/skills.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { CaseStudiesComponent } from './components/case-studies/case-studies.component';
+import { ServicesComponent } from './components/services/services.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { CertificationsComponent } from './components/certifications/certifications.component';
 import { BlogComponent } from './components/blog/blog.component';
@@ -28,6 +30,8 @@ import { ChatWidgetService } from './services/chat-widget.service';
     SkillsComponent,
     ExperienceComponent,
     ProjectsComponent,
+    CaseStudiesComponent,
+    ServicesComponent,
     TestimonialsComponent,
     CertificationsComponent,
     BlogComponent,
