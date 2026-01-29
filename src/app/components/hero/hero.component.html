@@ -76,7 +76,7 @@
       </div>
     }
 
-    <!-- Trust Badges -->
+    <!-- Trust Badges - Hidden for now
     @if (personalInfo.trustBadges && personalInfo.trustBadges.length > 0) {
       <div class="hero__trust-badges" role="list" aria-label="Trust badges">
         @for (badge of personalInfo.trustBadges; track badge.label) {
@@ -87,6 +87,7 @@
         }
       </div>
     }
+    -->
 
     <div class="hero__actions">
       <a class="btn btn--primary" (click)="scrollTo('contact')" (keydown.enter)="scrollTo('contact')" tabindex="0" role="button">Contact Me</a>
