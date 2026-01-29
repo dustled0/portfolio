@@ -28,6 +28,7 @@ export interface Project {
     embedId: string;
     defaultTab?: string;
   };
+  featured?: boolean;  // Show featured badge
 }
 
 export interface Education {

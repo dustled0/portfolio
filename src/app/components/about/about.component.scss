@@ -74,4 +74,17 @@ $white: #FFFFFF;
       transition: color 0.3s ease;
     }
   }
+
+  &__github {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--accent-tan, $accent-tan);
+  }
+
+  &__section-title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--primary-brown, $primary-brown);
+    margin-bottom: 1.5rem;
+  }
 }

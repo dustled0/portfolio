@@ -29,7 +29,13 @@
 
     <div class="projects" role="list" aria-live="polite">
       @for (project of filteredProjects; track project.name; let i = $index) {
-        <article class="project card" role="listitem" appScrollReveal [delay]="i * 100" (click)="openProjectModal(project)">
+        <article class="project card" [class.project--featured]="project.featured" role="listitem" appScrollReveal [delay]="i * 100" (click)="openProjectModal(project)">
+          @if (project.featured) {
+            <div class="project__badge">
+              <i class="fas fa-star" aria-hidden="true"></i>
+              Featured
+            </div>
+          }
           <div class="project__screenshot" 
                (mouseenter)="playVideo($event)" 
                (mouseleave)="pauseVideo($event)">

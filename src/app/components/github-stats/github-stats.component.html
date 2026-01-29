@@ -1,0 +1,50 @@
+<div class="github-stats">
+  <div class="github-stats__header">
+    <a [href]="'https://github.com/' + username" target="_blank" rel="noopener noreferrer" class="github-stats__link">
+      <i class="fab fa-github" aria-hidden="true"></i>
+      <span>{{'@'}}{{ username }}</span>
+      <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <div class="github-stats__grid">
+    <div class="github-stats__card" [class.github-stats__card--loaded]="isLoaded.stats">
+      @if (!isLoaded.stats) {
+        <div class="github-stats__loader">
+          <div class="github-stats__spinner"></div>
+        </div>
+      }
+      <img 
+        [src]="statsUrl" 
+        alt="GitHub Stats"
+        (load)="onImageLoad('stats')"
+        loading="lazy">
+    </div>
+
+    <div class="github-stats__card" [class.github-stats__card--loaded]="isLoaded.streak">
+      @if (!isLoaded.streak) {
+        <div class="github-stats__loader">
+          <div class="github-stats__spinner"></div>
+        </div>
+      }
+      <img 
+        [src]="streakUrl" 
+        alt="GitHub Streak"
+        (load)="onImageLoad('streak')"
+        loading="lazy">
+    </div>
+
+    <div class="github-stats__card github-stats__card--langs" [class.github-stats__card--loaded]="isLoaded.langs">
+      @if (!isLoaded.langs) {
+        <div class="github-stats__loader">
+          <div class="github-stats__spinner"></div>
+        </div>
+      }
+      <img 
+        [src]="topLangsUrl" 
+        alt="Top Languages"
+        (load)="onImageLoad('langs')"
+        loading="lazy">
+    </div>
+  </div>
+</div>
