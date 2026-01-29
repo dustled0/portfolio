@@ -495,7 +495,7 @@ const observer = new IntersectionObserver(
         'Component Libraries & Design Systems'
       ],
       price: {
-        amount: 50,
+        amount: 15,
         unit: 'hour',
         note: 'Flexible project-based pricing available'
       }
@@ -512,7 +512,7 @@ const observer = new IntersectionObserver(
         'Design System Integration'
       ],
       price: {
-        amount: 45,
+        amount: 15,
         unit: 'hour'
       }
     },
@@ -528,7 +528,7 @@ const observer = new IntersectionObserver(
         'Refactoring Guidance'
       ],
       price: {
-        amount: 200,
+        amount: 100,
         unit: 'project',
         note: 'Starting price for initial assessment'
       }
