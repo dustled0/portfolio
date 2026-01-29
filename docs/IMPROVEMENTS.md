@@ -214,3 +214,34 @@ These can be implemented quickly for maximum impact:
 - [x] Add Calendly button to contact section
 - [ ] Write one detailed case study
 - [x] **Prominent resume download buttons** - Golden gradient buttons in Hero and Contact sections
+
+---
+
+## Future Improvements (Phase 2)
+
+### High Impact
+- [ ] **Video Introduction** - 30-60 sec personal intro video for trust building
+- [ ] **"How I Work" Process Section** - Visual timeline: Discovery → Proposal → Development → Launch
+- [ ] **FAQ Section** - Answer common client questions (rates, timeline, revisions, etc.)
+- [ ] **Response Time Badge** - "Usually responds within 2 hours" indicator
+
+### Trust Builders
+- [ ] **Prominent Social Links** - LinkedIn, GitHub icons in header/footer
+- [ ] **Trust Badges** - "NDA Available", "100% Job Success", certifications
+- [ ] **Recent Activity Indicator** - "Last project completed: [date]" shows you're active
+
+### Engagement
+- [ ] **Before/After Sliders** - Show project transformations visually
+- [ ] **Tech Stack Comparison** - "Why Angular vs React for your project?" guide
+- [ ] **Newsletter Signup** - Build email list for future leads
+- [ ] **Testimonial Video Clips** - Audio/video testimonials feel more authentic
+
+### Priority Order
+| Feature | Client Impact | Effort |
+|---------|--------------|--------|
+| Video Introduction | Very High | Medium |
+| How I Work Section | High | Low |
+| Social Links | High | Low |
+| FAQ Section | High | Low |
+| Trust Badges | Medium | Low |
+| Before/After Sliders | High | Medium |
