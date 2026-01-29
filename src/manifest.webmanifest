@@ -1,8 +1,8 @@
 {
   "name": "Dustine Lee A. Dequito - Portfolio",
   "short_name": "Dustine Portfolio",
-  "theme_color": "#5D4037",
-  "background_color": "#EFEBE9",
+  "theme_color": "#1E3A5F",
+  "background_color": "#F7FAFC",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

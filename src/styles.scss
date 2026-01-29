@@ -1,23 +1,23 @@
-// Color Variables - Brown/Tan Theme matching resume
-$primary-brown: #5D4037;
-$primary-brown-light: #795548;
-$accent-tan: #D7CCC8;
-$cream: #EFEBE9;
-$text-dark: #3E2723;
-$text-medium: #5D4037;
-$accent-orange: #8D6E63;
+// Color Variables - Navy Blue Professional Theme
+$primary-navy: #1E3A5F;
+$primary-navy-light: #2C5282;
+$accent-slate: #CBD5E0;
+$cream: #F7FAFC;
+$text-dark: #1A202C;
+$text-medium: #2D3748;
+$accent-blue: #4299E1;
 $white: #FFFFFF;
-$shadow-color: rgba(0, 0, 0, 0.1);
+$shadow-color: rgba(30, 58, 95, 0.1);
 
 // CSS Custom Properties for theming
 :root {
-  --primary-brown: #{$primary-brown};
-  --primary-brown-light: #{$primary-brown-light};
-  --accent-tan: #{$accent-tan};
+  --primary-brown: #{$primary-navy};
+  --primary-brown-light: #{$primary-navy-light};
+  --accent-tan: #{$accent-slate};
   --cream: #{$cream};
   --text-dark: #{$text-dark};
   --text-medium: #{$text-medium};
-  --accent-orange: #{$accent-orange};
+  --accent-orange: #{$accent-blue};
   --white: #{$white};
   --shadow-color: #{$shadow-color};
   --bg-primary: #{$cream};
@@ -29,20 +29,20 @@ $shadow-color: rgba(0, 0, 0, 0.1);
 
 // Dark Theme
 .dark-theme {
-  --primary-brown: #8D6E63;
-  --primary-brown-light: #A1887F;
-  --accent-tan: #4E342E;
-  --cream: #1a1a1a;
-  --text-dark: #E0E0E0;
-  --text-medium: #BDBDBD;
-  --accent-orange: #BCAAA4;
-  --white: #2d2d2d;
-  --shadow-color: rgba(0, 0, 0, 0.3);
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #2d2d2d;
-  --card-bg: #2d2d2d;
-  --text-primary: #E0E0E0;
-  --text-secondary: #BDBDBD;
+  --primary-brown: #4299E1;
+  --primary-brown-light: #63B3ED;
+  --accent-tan: #2D3748;
+  --cream: #1A202C;
+  --text-dark: #E2E8F0;
+  --text-medium: #A0AEC0;
+  --accent-orange: #90CDF4;
+  --white: #2D3748;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --bg-primary: #1A202C;
+  --bg-secondary: #2D3748;
+  --card-bg: #2D3748;
+  --text-primary: #E2E8F0;
+  --text-secondary: #A0AEC0;
 }
 
 // Typography
@@ -256,7 +256,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, transparent 0%, rgba(141, 110, 99, 0.05) 100%);
+    background: linear-gradient(135deg, transparent 0%, rgba(30, 58, 95, 0.05) 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -367,8 +367,8 @@ img {
 
 // Utility Classes
 .text-center { text-align: center; }
-.text-primary { color: $primary-brown; }
-.text-accent { color: $accent-orange; }
+.text-primary { color: $primary-navy; }
+.text-accent { color: $accent-blue; }
 .mb-1 { margin-bottom: 0.5rem; }
 .mb-2 { margin-bottom: 1rem; }
 .mb-3 { margin-bottom: 1.5rem; }
@@ -473,7 +473,7 @@ img {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, $primary-brown 0%, $primary-brown-light 50%, $accent-orange 100%);
+  background: linear-gradient(135deg, $primary-navy 0%, $primary-navy-light 50%, $accent-blue 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -576,7 +576,7 @@ a:hover, button:hover {
   position: absolute;
   top: -40px;
   left: 0;
-  background: $primary-brown;
+  background: $primary-navy;
   color: $white;
   padding: 0.75rem 1.5rem;
   z-index: 10000;
@@ -587,7 +587,7 @@ a:hover, button:hover {
 
   &:focus {
     top: 0;
-    outline: 2px solid $accent-tan;
+    outline: 2px solid $accent-slate;
     outline-offset: 2px;
   }
 }
