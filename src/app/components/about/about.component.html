@@ -30,10 +30,20 @@
           </div>
         </div>
 
+        <!-- Download Resume Button -->
+        <div class="about__resume" appScrollReveal [delay]="500">
+          <a href="assets/dustine.l.a.dequito.pdf" download="Dustine_Dequito_Resume.pdf" class="btn btn--resume" aria-label="Download resume as PDF">
+            <i class="fas fa-download" aria-hidden="true"></i>
+            Download Resume
+          </a>
+        </div>
+
+        <!-- GitHub Activity - Hidden for now
         <div class="about__github" appScrollReveal [delay]="500">
           <h3 class="about__section-title">GitHub Activity</h3>
           <app-github-stats [username]="githubUsername"></app-github-stats>
         </div>
+        -->
       </div>
     </div>
   </div>

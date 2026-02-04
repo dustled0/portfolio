@@ -173,17 +173,73 @@
         </div>
       }
 
-      <!-- Recent Activity Indicator -->
-      @if (lastActivityText) {
-        <p class="footer__activity">
-          <i class="fas fa-bolt" aria-hidden="true"></i>
-          Last project completed: <strong>{{ lastActivityText }}</strong>
-        </p>
+      <!-- Footer Content Grid -->
+      <div class="footer__grid">
+        <!-- Quick Links -->
+        <div class="footer__column">
+          <h4 class="footer__column-title">Quick Links</h4>
+          <ul class="footer__links">
+            <li><a (click)="scrollTo('about')">About</a></li>
+            <li><a (click)="scrollTo('skills')">Skills</a></li>
+            <li><a (click)="scrollTo('experience')">Experience</a></li>
+            <li><a (click)="scrollTo('projects')">Projects</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer__column">
+          <h4 class="footer__column-title">Contact</h4>
+          <ul class="footer__contact-list">
+            <li>
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <a href="mailto:{{ personalInfo.email }}">{{ personalInfo.email }}</a>
+            </li>
+            <li>
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              <a href="tel:{{ personalInfo.phone }}">{{ personalInfo.phone }}</a>
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <span>{{ personalInfo.location }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer__column">
+          <h4 class="footer__column-title">Services</h4>
+          <ul class="footer__links">
+            <li>Web Development</li>
+            <li>Frontend Architecture</li>
+            <li>Code Review & Consulting</li>
+            <li>UI/UX Implementation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Availability Badge -->
+      @if (personalInfo.availableForWork) {
+        <div class="footer__availability">
+          <span class="footer__availability-badge">
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+            {{ personalInfo.availabilityStatus || 'Available for Freelance' }}
+          </span>
+          <span class="footer__experience">
+            <i class="fas fa-award" aria-hidden="true"></i>
+            {{ personalInfo.yearsExperience }}+ Years Experience
+          </span>
+        </div>
       }
 
-      <p class="footer__text">
-        &copy; {{ currentYear }} {{ personalInfo.name }}. All rights reserved.
-      </p>
+      <!-- Copyright -->
+      <div class="footer__bottom">
+        <p class="footer__text">
+          &copy; {{ currentYear }} {{ personalInfo.name }}. All rights reserved.
+        </p>
+        <p class="footer__made-with">
+          Made with <i class="fas fa-heart" aria-hidden="true"></i> and Angular
+        </p>
+      </div>
     </div>
   </footer>
 </section>
