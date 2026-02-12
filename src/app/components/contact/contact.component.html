@@ -11,17 +11,7 @@
 
       <!-- Quick Actions -->
       <div class="contact__quick-actions" appScrollReveal [delay]="150">
-        @if (personalInfo.calendlyUrl) {
-          <a
-            [href]="personalInfo.calendlyUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="contact__action-btn contact__action-btn--schedule"
-            aria-label="Schedule a call via Calendly">
-            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-            <span>Schedule a Call</span>
-          </a>
-        }
+        <!-- Schedule a Call button hidden -->
         <a
           href="assets/dustine.l.a.dequito.pdf"
           download="Dustine_Dequito_Resume.pdf"
